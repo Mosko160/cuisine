@@ -1,5 +1,5 @@
 $(function(){
-    $("#addIngredients").load("/htmlObject/addIngredients.html"); 
+    $("#addIngredients").load("/htmlObject/searchIngredients.html"); 
 });
 
 var dataI;
