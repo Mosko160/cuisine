@@ -1,0 +1,19 @@
+<div id='state1'>
+    <p>Nom de la recette :<input id='nom'></p>
+</div>
+<div id='state2' style='display: none;'>
+    <p>Ingredients :</p>
+    <div id='addIngredients'></div>
+</div>
+<div id='state3' style='display: none;'>
+    <p>Quantités :</p>
+    <div id='containerQt'></div>
+</div>
+<div id='state4' style='display: none;'>
+    <p>Étapes :</p>
+    <div id='stepList'></div>
+    <button onclick='submit()'>Enregistrer</button>
+</div>
+<button id='nextButton' onclick='next()'>Suivant</button>
+<script src="/js/searchIngredient.js"></script>
+<script src="/js/addStep.js"></script>
