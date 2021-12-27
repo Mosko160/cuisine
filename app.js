@@ -92,6 +92,9 @@ const requestListener = function(req,res){
                     }
                 });
                 break;
+            case 'addRecipe':
+                console.log('nouvelle recette');
+                break;
         }
     }
     

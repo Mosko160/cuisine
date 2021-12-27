@@ -2,13 +2,13 @@ $(function(){
     $("#recipeState").load("/htmlObject/recipeState.html"); 
 });
 
-state = 1;
+stateNumber = 1;
 function next(){
-    document.getElementById('state'+state).style.display = 'none';
-    state += 1;
-    document.getElementById('state'+state).style.display = '';
-    if(state == 3){state3();}
-    else if(state == 4){document.getElementById('nextButton').style.display = 'none';}
+    document.getElementById('state'+stateNumber).style.display = 'none';
+    stateNumber += 1;
+    document.getElementById('state'+stateNumber).style.display = '';
+    if(stateNumber == 3){state3();}
+    else if(stateNumber == 4){document.getElementById('nextButton').style.display = 'none';}
 }
             
 function state3(){
