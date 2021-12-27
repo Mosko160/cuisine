@@ -5,20 +5,51 @@
         <script src="/js/searchIngredient.js"></script>
         <script src="/js/addStep.js"></script>
         <script>
+            state = 1;
+            function next(){
+                document.getElementById('state'+state).style.display = 'none';
+                state += 1;
+                document.getElementById('state'+state).style.display = '';
+                if(state == 3){state3();}
+                else if(state == 4){document.getElementById('nextButton').style.display = 'none';}
+            }
             
+            function state3(){
+                for(element of listIngredientsName){
+                    p = document.createElement('p');
+                    p.innerHTML = element;
+                    i = document.createElement('input');
+                    i.id = 'inputQt'+element;
+                    p.appendChild(i);
+                    document.getElementById('containerQt').appendChild(p);
+                }
+            }
+
             function submit(){
+                name = document.getElementById('nom').value;
+                listIngredients = listIngredientsId;
 
             }
 
         </script>
     </head>
     <body>
-        <p>Nom de la recette :<input id='nom'></p>
-        <div>
-            <p>Ingredients : </p>
+        <div id='state1'>
+            <p>Nom de la recette :<input id='nom'></p>
+        </div>
+        <div id='state2' style='display: none;'>
+            <p>Ingredients :</p>
             <div id='addIngredients'></div>
         </div>
-        <div id='stepList'></div>
-        <button onclick='submit()'>Enregistrer</button>
+        <div id='state3' style='display: none;'>
+            <p>Quantités :</p>
+            <div id='containerQt'></div>
+        </div>
+        <div id='state4' style='display: none;'>
+            <p>Étapes :</p>
+            <div id='stepList'></div>
+            <button onclick='submit()'>Enregistrer</button>
+        </div>
+        <button id='nextButton' onclick='next()'>Suivant</button>
     </body>
 </html>
