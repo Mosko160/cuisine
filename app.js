@@ -123,6 +123,13 @@ const requestListener = function(req,res){
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                     }
                 });
+                res.end('success');
+                break;
+            case 'addIngredients':
+                Iname = data['value'];
+                sql = `insert into ingredients (nom) values ('${Iname}');`;
+                ingredientsDB.all(sql,[],(err)=>{if(err){throw err;}});
+                res.end('success');
                 break;
         }
     }
