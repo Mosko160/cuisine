@@ -13,13 +13,13 @@
                 }
                 stepI = [];
                 for(a = 1; a != step+1; a++){
-                    console.log(a);
                     stepI.push(document.getElementById('taStep'+a).value);
                 }
                 request = {
                     action: 'addRecipe',
                     name: name,
                     listIngredients: listIngredientsId,
+                    listNameIngredients: listIngredientsName,
                     quantity: quantityI,
                     step: stepI
                 }

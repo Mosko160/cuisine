@@ -61,7 +61,6 @@ const requestListener = function(req,res){
                                     name.push(row['nom']);
                                     id.push(row['id']);
                                 });
-                                console.log(JSON.stringify([name,id]));
                                 res.end(JSON.stringify([name,id]));
                             });
                         });
@@ -93,7 +92,37 @@ const requestListener = function(req,res){
                 });
                 break;
             case 'addRecipe':
-                console.log('nouvelle recette');
+                Rname = data['name'];
+                RlistIngredients = data['listIngredients[]'];
+                RlistIngredientsNames = data['listNameIngredients[]'];
+                Rquantity = data['quantity[]'];           
+                Rstep = data['step[]'];
+                code = '';
+                for(element of RlistIngredients){
+                    code += `[${element}]/`;
+                }
+                sql = `insert into recettes (nom,code) values ('${Rname}','${code}');`;
+                recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                sql = `select id from recettes where nom='${Rname}';`;
+                recettesDB.all(sql,[],(err,row)=>{
+                    if(err){throw err}
+                    else{
+                        id = row[0]['id'];
+                        content = '{';
+                        for(a=0; a != RlistIngredientsNames.length; a++){content += `"${RlistIngredientsNames[a]}":"${Rquantity[a]}",`;}
+                        content += `"liste":[`;
+                        for(a=0; a!=RlistIngredientsNames.length; a++){content += `"${RlistIngredientsNames[a]}",`;}
+                        content = content.slice(0,-1);
+                        content += ']}';
+                        sql = `insert into recettes_ingredients (id,ingredients) values ('${id}','${content}');`;
+                        recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                        content = '{';
+                        for(a=0;a!=Rstep.length;a++){content += `"${a+1}":"${Rstep[a]}",`;}
+                        content += `"etapes":${Rstep.length}}`;
+                        sql = `insert into recettes_instructions (id,instructions) values ('${id}','${content}');`;
+                        recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    }
+                });
                 break;
         }
     }
