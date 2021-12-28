@@ -35,3 +35,10 @@
     color: white;
     border-color: white;
 }
+
+.searchInput{
+    height: 2.5em;
+    border: 2px,solid,#555;
+    border-radius: 20px;
+    text-align: center;
+}
