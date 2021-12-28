@@ -19,4 +19,13 @@ function getContent(){
         }
         document.getElementById('container').appendChild(p);
     });
+
+    $.get('ajax',{action:'getTime',id:recipeId},(data,status)=>{
+        //data = JSON.parse(JSON.parse(data));
+        data = data.slice(1,-1);
+        data = data.split('#');
+        p = document.createElement('p');
+        p.innerHTML = `Temps de préparation : ${data[0]}, temps de cuisson : ${data[1]}`;
+        document.getElementById('containerT').appendChild(p);
+    });
 }

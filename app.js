@@ -91,12 +91,25 @@ const requestListener = function(req,res){
                     }
                 });
                 break;
+            case 'getTime':
+                id = data['id'];
+                sql = `select * from recettes_temps where id=${id};`;
+                recettesDB.all(sql,[],(err,rows)=>{
+                    if(err){throw err;}
+                    else{
+                        rows.forEach((row)=>{
+                            res.end(JSON.stringify(`${row['temps_preparation']}#${row['temps_cuisson']}`));
+                        });
+                    }
+                });
+                break;
             case 'addRecipe':
                 Rname = data['name'];
                 RlistIngredients = data['listIngredients[]'];
                 RlistIngredientsNames = data['listNameIngredients[]'];
                 Rquantity = data['quantity[]'];           
                 Rstep = data['step[]'];
+                Rtime = data['time[]'];
                 code = '';
                 for(element of RlistIngredients){
                     code += `[${element}]/`;
@@ -120,6 +133,8 @@ const requestListener = function(req,res){
                         for(a=0;a!=Rstep.length;a++){content += `"${a+1}":"${Rstep[a]}",`;}
                         content += `"etapes":${Rstep.length}}`;
                         sql = `insert into recettes_instructions (id,instructions) values ('${id}','${content}');`;
+                        recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                        sql = `insert into recettes_temps (id,temps_preparation,temps_cuisson) values ("${id}","${Rtime[0]}","${Rtime[1]}");`;
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                     }
                 });

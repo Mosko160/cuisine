@@ -13,6 +13,7 @@ function submit(){
         name: name,
         listIngredients: listIngredientsId,
         listNameIngredients: listIngredientsName,
+        time : [document.getElementById('preparationTime').value,document.getElementById('cookTime').value],
         quantity: quantityI,
         step: stepI
     }
