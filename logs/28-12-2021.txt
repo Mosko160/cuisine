@@ -1,0 +1,7 @@
+16:17:5 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+16:17:5 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+16:17:5 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+16:17:5 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+16:17:5 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+16:17:6 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+16:17:6 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
