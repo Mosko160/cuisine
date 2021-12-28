@@ -1,4 +1,4 @@
 function save(){
     valueN = document.getElementById('ingredientsName').value;
-    $.get('ajax',{action:'addIngredients',value:valueN},(data,status)=>{});
+    $.get('ajax',{action:'addIngredients',value:valueN},(data,status)=>{document.location.href = '/'});
 }

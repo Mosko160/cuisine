@@ -13,7 +13,7 @@ function getContent(){
 
     $.get('ajax',{action:'getRecipe',id:recipeId},(data,status)=>{
         data = JSON.parse(JSON.parse(data));
-        for(a=1;a!=data.etapes;a++){
+        for(a=1;a!=data.etapes+1;a++){
             p = document.createElement('p');
             p.innerHTML = data[a];
             document.getElementById('container').appendChild(p);

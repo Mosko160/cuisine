@@ -3,31 +3,7 @@
         <meta charset="utf-8" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
         <script src="/js/recipeState.js"></script>
-        <script>
-            
-            function submit(){
-                name = document.getElementById('nom').value;
-                quantityI = [];
-                for(element of listIngredientsName){
-                    quantityI.push(document.getElementById('inputQt'+element).value);
-                }
-                stepI = [];
-                for(a = 1; a != step+1; a++){
-                    stepI.push(document.getElementById('taStep'+a).value);
-                }
-                request = {
-                    action: 'addRecipe',
-                    name: name,
-                    listIngredients: listIngredientsId,
-                    listNameIngredients: listIngredientsName,
-                    quantity: quantityI,
-                    step: stepI
-                }
-                $.get('ajax',request,(data,status)=>{
-                    alert('send');
-                });
-            }
-        </script>
+        <script src="/js/addRecipe.js"></script>
     </head>
     <body>
         <div id='recipeState'></div>
