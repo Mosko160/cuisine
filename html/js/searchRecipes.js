@@ -13,9 +13,10 @@ function displayRecipes(recipes){
     div = document.createElement('div');
     div.id = 'removableRecipes';
     for(a=0;a!=recipes[0].length;a++){
-        p = document.createElement('p');
+        p = document.createElement('div');
         p.innerHTML = recipes[0][a];
         p.setAttribute('onclick',`recipeSelected(${recipes[1][a]})`);
+        p.setAttribute('class','recipeList');
         div.appendChild(p);
     }
     document.getElementById('containsRecipes').appendChild(div);
