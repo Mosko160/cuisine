@@ -1,0 +1,10 @@
+.containerQt{
+    background-color: white;
+    color: rgb(255, 195, 155);
+    border: 2px solid;
+}
+
+.container{
+    /* text-align: left; */
+    margin-left: auto;
+}
