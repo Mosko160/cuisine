@@ -32,8 +32,9 @@ function displayIngredients(){
     div = document.createElement('div');
     div.id = 'removableIngredients';
     for(a=0;a!=listIngredientsName.length;a++){
-        p = document.createElement('p');
+        p = document.createElement('div');
         p.innerHTML = listIngredientsName[a];
+        p.setAttribute('class','ingredientList');
         p.setAttribute('onclick',`removeIngredient(${a})`);
         div.appendChild(p);
     }
