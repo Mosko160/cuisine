@@ -1,10 +1,30 @@
 .containerQt{
     background-color: white;
-    color: rgb(255, 195, 155);
+    color: black;
     border: 2px solid;
+    width: 85%;
+    background-color: rgb(174, 204, 204);
 }
 
 .container{
     /* text-align: left; */
     margin-left: auto;
+}
+
+.step{
+    background-color: white;
+    color: black;
+    border: 2px solid;
+    width: 85%;
+    background-color: rgb(174, 204, 204);
+    height : 3em;
+    
+}
+
+.stepNum{
+    margin-top: 0.7em;
+}
+
+.stepContent{
+    width: 85%;
 }

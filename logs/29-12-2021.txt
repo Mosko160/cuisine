@@ -1,0 +1,514 @@
+19:33:7 | (7ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+19:33:8 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+19:33:8 | (5ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+19:33:8 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+19:33:8 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+19:33:8 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+19:33:8 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+19:33:8 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+19:33:32 | (3ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'O%' limit 3;
+19:33:34 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+19:33:38 | (2ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'F%' limit 3;
+19:33:38 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Fa%' limit 3;
+19:33:39 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+19:33:50 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'O%' limit 3;
+19:33:50 | (2ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+19:33:54 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'S%' limit 3;
+19:33:54 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Su%' limit 3;
+19:33:55 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+19:33:59 | (1ms) 10.0.0.144 - [rechercheRecette] - select count(nom) from ingredients;
+19:33:59 | (5ms) 10.0.0.144 - [rechercheRecette] - select * from recettes where (code like '%[1]/%' or code like '%[3]/%' or code like '%[5]/%' ) and ( code not like '%[2]/%' and code not like '%[4]/%' and code not like '%[6]/%' and code not like '%[7]/%' and code not like '%[8]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+22:18:26 | (5ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+22:18:26 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+22:18:26 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:18:26 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:18:26 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:18:27 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+22:18:27 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:18:27 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+22:18:32 | (7ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;
+22:18:32 | (0ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'oe%' limit 3;
+22:18:45 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;
+22:18:45 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:18:47 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+22:18:47 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+22:18:47 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:18:47 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:18:47 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+22:18:47 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:18:47 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+22:18:53 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'c%' limit 3;
+22:18:53 | (2ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'ch%' limit 3;
+22:18:55 | (2ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:18:59 | (2ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 's%' limit 3;
+22:18:59 | (0ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'su%' limit 3;
+22:19:0 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:19:3 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'l%' limit 3;
+22:19:3 | (0ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'le%' limit 3;
+22:19:4 | (2ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:19:7 | (2ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;
+22:19:7 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'oe%' limit 3;
+22:19:8 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:19:11 | (2ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'f%' limit 3;
+22:19:11 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'fa%' limit 3;
+22:19:12 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:19:14 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'b%' limit 3;
+22:19:14 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'be%' limit 3;
+22:19:15 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:19:19 | (1ms) 10.0.0.42 - [rechercheRecette] - select count(nom) from ingredients;
+22:19:19 | (5ms) 10.0.0.42 - [rechercheRecette] - select * from recettes where (code like '%[7]/%' or code like '%[5]/%' or code like '%[6]/%' or code like '%[1]/%' or code like '%[3]/%' or code like '%[8]/%' ) and ( code not like '%[2]/%' and code not like '%[4]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+22:19:23 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:19:23 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:19:23 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:19:23 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:19:23 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:19:23 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:19:38 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:19:38 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:19:38 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:20:36 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:20:36 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:20:36 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:20:36 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:20:37 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:20:37 | (1ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:21:1 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:21:1 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:21:1 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:21:1 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:21:1 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:21:1 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:21:15 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:21:15 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:21:15 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:21:15 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:21:15 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:21:15 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:21:35 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:21:35 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:21:36 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:21:36 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:21:36 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:21:36 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:21:43 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:21:43 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:21:43 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:21:43 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:21:43 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:21:43 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:22:53 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:22:53 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:22:53 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:22:53 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:22:53 | (1ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:22:53 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:23:19 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:23:19 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:23:19 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:23:19 | (1ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:23:19 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:23:19 | (1ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:23:33 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:23:33 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:23:33 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:23:34 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:23:34 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:23:34 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:23:53 | (5ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:23:53 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:23:53 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:23:54 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:23:54 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:23:54 | (1ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:24:56 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:24:56 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:24:56 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:24:57 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:24:57 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:24:57 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:25:27 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:25:27 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:25:27 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:25:27 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:25:27 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:25:27 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:25:51 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:25:51 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:25:51 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:25:51 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:25:51 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:25:51 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:25:58 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:25:59 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:25:59 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:25:59 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:25:59 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:25:59 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:26:2 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:26:2 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:26:2 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:26:3 | (1ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:26:3 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:26:3 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:26:18 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:26:18 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:26:18 | (26ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:26:18 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:26:18 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:26:18 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:26:25 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:26:25 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:26:25 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:26:25 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:26:25 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:26:25 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:26:33 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:26:33 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:26:33 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:26:33 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:26:33 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:26:33 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:27:30 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:27:30 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:27:30 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:27:30 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:27:30 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:27:30 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:29:36 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:29:36 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:29:36 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:29:36 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:29:36 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:29:36 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:29:48 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:29:49 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:29:49 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:29:49 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:29:49 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:29:49 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:30:5 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:30:5 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:30:5 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:30:5 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:30:5 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:30:5 | (1ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:30:54 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:30:54 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:30:54 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:30:54 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:30:54 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:30:54 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:31:29 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:31:29 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:31:29 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:31:29 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:31:29 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:31:29 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:31:37 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:31:38 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:31:38 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:31:38 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:31:38 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:31:38 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:31:44 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:31:44 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:31:44 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:31:44 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:31:44 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:31:44 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:31:51 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:31:51 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:31:51 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:31:51 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:31:51 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:31:51 | (1ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:31:57 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:31:57 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:31:57 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:31:57 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:31:57 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:31:57 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:32:1 | (4ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:32:1 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:32:1 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:32:1 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:32:1 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:32:1 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:32:7 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:32:7 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:32:7 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:32:8 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:32:8 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:32:8 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:32:56 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:32:56 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:32:56 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:32:56 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:32:56 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:32:56 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:33:11 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:33:11 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:33:11 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:33:11 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:33:11 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:33:11 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:33:52 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+22:33:52 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:33:52 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:33:52 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:33:52 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+22:33:52 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:33:52 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+22:33:52 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:34:1 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+22:34:1 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:34:1 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:34:1 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+22:34:1 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:34:1 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+22:34:1 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:34:1 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+22:34:1 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:34:26 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'O%' limit 3;
+22:34:27 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:34:29 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'F%' limit 3;
+22:34:30 | (5ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:34:32 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'S%' limit 3;
+22:34:32 | (0ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Su%' limit 3;
+22:34:32 | (0ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:34:35 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'L%' limit 3;
+22:34:35 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Le%' limit 3;
+22:34:35 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:34:37 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'B%' limit 3;
+22:34:37 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Be%' limit 3;
+22:34:38 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:34:45 | (0ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'B%' limit 3;
+22:34:45 | (0ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Be%' limit 3;
+22:34:46 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:34:49 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'B%' limit 3;
+22:34:49 | (2ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Be%' limit 3;
+22:34:49 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Beu%' limit 3;
+22:34:50 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:34:52 | (0ms) 10.0.0.144 - [rechercheRecette] - select count(nom) from ingredients;
+22:34:52 | (3ms) 10.0.0.144 - [rechercheRecette] - select * from recettes where (code like '%[1]/%' or code like '%[3]/%' or code like '%[5]/%' or code like '%[6]/%' or code like '%[8]/%' ) and ( code not like '%[2]/%' and code not like '%[4]/%' and code not like '%[7]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+22:34:58 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'C%' limit 3;
+22:34:58 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like 'Ch%' limit 3;
+22:34:58 | (1ms) 10.0.0.144 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+22:35:0 | (0ms) 10.0.0.144 - [rechercheRecette] - select count(nom) from ingredients;
+22:35:0 | (3ms) 10.0.0.144 - [rechercheRecette] - select * from recettes where (code like '%[1]/%' or code like '%[3]/%' or code like '%[5]/%' or code like '%[6]/%' or code like '%[8]/%' or code like '%[7]/%' ) and ( code not like '%[2]/%' and code not like '%[4]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+22:35:1 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:35:2 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:35:2 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:35:2 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:35:2 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:35:2 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:35:2 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:35:7 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:35:7 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:35:7 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:35:7 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:35:7 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:35:7 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:35:31 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:35:31 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:35:31 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:35:31 | (1ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:35:31 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:35:31 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:35:31 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:35:43 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:35:43 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:35:43 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:35:43 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:35:43 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:35:43 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:35:43 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:36:29 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:36:29 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:36:29 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:36:29 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:36:29 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:36:29 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:36:29 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:37:34 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:37:35 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:37:35 | (5ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:37:35 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:37:35 | (16ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:37:35 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:37:35 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:39:6 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:39:6 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:39:6 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:39:6 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:39:6 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:39:6 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:39:18 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:39:18 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:39:18 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:39:18 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:39:18 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:39:18 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:40:36 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:40:37 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:40:37 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:40:37 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:40:37 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:40:37 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:40:37 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/ajax
+22:41:58 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:41:59 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:41:59 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:41:59 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:41:59 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:41:59 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:41:59 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:42:9 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:42:9 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:42:9 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:42:10 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:42:10 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:42:10 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:42:19 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:42:20 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:42:20 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:42:20 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:42:20 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:42:20 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:42:20 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:42:35 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:42:35 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:42:35 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:42:35 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:42:35 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:42:35 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:42:35 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:42:42 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:42:42 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:42:42 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:42:42 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:42:42 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:42:43 | (0ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:42:43 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:42:44 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:42:44 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:42:44 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:42:44 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:42:44 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:42:44 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:43:28 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:43:28 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:43:28 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:43:28 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:43:28 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:43:28 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:43:28 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:43:34 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:43:34 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:43:34 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:43:34 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:43:34 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:43:34 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:43:34 | (4ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/ajax
+22:43:47 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:43:47 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:43:47 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:43:47 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:43:47 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:43:47 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:43:47 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:44:3 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:44:4 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:44:4 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:44:4 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:44:4 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:44:4 | (1ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:44:4 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:44:9 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:44:9 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:44:9 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:44:9 | (0ms) 10.0.0.42 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:44:9 | (0ms) 10.0.0.42 - [getRecipe] - select * from recettes_instructions where id=1;
+22:44:9 | (1ms) 10.0.0.42 - [getTime] - select * from recettes_temps where id=1;
+22:44:18 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:44:18 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:44:18 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:44:18 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:44:18 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:44:18 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:47:4 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:47:4 | (6ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:47:4 | (7ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:47:4 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:47:4 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:47:4 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:47:4 | (0ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:47:30 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:47:30 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:47:30 | (3ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:47:30 | (1ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:47:30 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:47:30 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:47:30 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:47:50 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/recipe.html
+22:47:50 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+22:47:50 | (2ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+22:47:50 | (0ms) 10.0.0.144 - [getQuantity] - select * from recettes_ingredients where id=1;
+22:47:50 | (0ms) 10.0.0.144 - [getRecipe] - select * from recettes_instructions where id=1;
+22:47:50 | (0ms) 10.0.0.144 - [getTime] - select * from recettes_temps where id=1;
+22:47:50 | (1ms) 10.0.0.144 - [getFile] - /home/baptiste/Documents/cuisine/html/favicon.ico
+22:49:20 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+22:49:20 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:49:20 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:49:20 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:49:20 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+22:49:20 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:49:20 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+22:49:24 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/addIngredients.html
+22:49:24 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+22:49:24 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+22:49:24 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:49:24 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:49:26 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:49:26 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+22:49:28 | (0ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;
+22:49:38 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+22:49:38 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+22:49:38 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+22:49:38 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:49:38 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+22:49:38 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:49:38 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+22:49:39 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/addIngredients.html
+22:49:39 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addIngredients.js
+22:49:39 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+22:49:39 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:49:39 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:49:42 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;
+22:49:51 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/addRecipe.html
+22:49:51 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addRecipe.js
+22:49:51 | (3ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addRecipe.js
+22:49:51 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/recipeState.html
+22:49:51 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+22:49:51 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:49:51 | (4ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addStep.js
+22:49:51 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:49:52 | (5ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/addStep.html
+22:49:59 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/addRecipe.html
+22:49:59 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/recipeState.js
+22:49:59 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addRecipe.js
+22:49:59 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/recipeState.html
+22:49:59 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+22:49:59 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+22:49:59 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addStep.js
+22:49:59 | (2ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:49:59 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/addStep.html
+22:59:23 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:59:23 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+22:59:26 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/index.html
+22:59:26 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+22:59:26 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+23:1:26 | (0ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+23:1:26 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+23:1:28 | (1ms) 10.0.0.42 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+23:8:51 | (1ms) 10.0.0.42 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;

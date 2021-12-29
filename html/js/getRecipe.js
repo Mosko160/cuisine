@@ -15,7 +15,7 @@ function getContent(){
         data = JSON.parse(JSON.parse(data));
         p = document.createElement('p');
         for(a=1;a!=data.etapes+1;a++){   
-            p.innerHTML += `<h3>Étape ${a} :</h3> ${data[a]}\n<br>`;
+            p.innerHTML += `<div class="step"><h3 class="stepNum">Étape ${a} :</h3> </div><br><div class="stepContent">${data[a]}</div>\n<br>`;
         }
         document.getElementById('container').appendChild(p);
     });
@@ -25,7 +25,7 @@ function getContent(){
         data = data.slice(1,-1);
         data = data.split('#');
         p = document.createElement('p');
-        p.innerHTML = `Temps de préparation : ${data[0]}, temps de cuisson : ${data[1]}`;
+        p.innerHTML = `<u>Temps de préparation : </u>${data[0]}<br><u>Temps de cuisson : </u>${data[1]}`;
         document.getElementById('containerT').appendChild(p);
     });
 }
