@@ -1,0 +1,8 @@
+.topBack{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    background-color: rgb(174, 204, 204);
+    justify-content: center;
+    align-items: center;
+}
