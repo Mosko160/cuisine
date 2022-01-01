@@ -6,3 +6,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.homeIcon{
+    right:5%;
+    width: 1.5em;
+    position: absolute;
+}

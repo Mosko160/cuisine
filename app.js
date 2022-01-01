@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const qs = require('querystring');
 const sql = require('sqlite3').verbose();
 
-const host = '192.168.235.97';
+const host = '192.168.0.30';
 const port = 80;
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
