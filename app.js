@@ -9,7 +9,7 @@ const port = 80;
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
 const ingredientsDB = new sql.Database(__dirname+'/database/ingredients.sqlite');
-
+const ideasDB = new sql.Database(__dirname+'/database/ideas.sqlite');
 var start;
 
 const requestListener = function(req,res){
@@ -61,7 +61,6 @@ const requestListener = function(req,res){
                                 }
                             }
                             sql = sql.slice(0,-3)+');';
-                            log(ip,action,sql);
                             recettesDB.all(sql,[],(err,rows)=>{
                                 if(err){throw err;}
                                 var name=[];
@@ -70,6 +69,7 @@ const requestListener = function(req,res){
                                     name.push(row['nom']);
                                     id.push(row['id']);
                                 });
+                                log(ip,action,sql);
                                 res.end(JSON.stringify([name,id]));
                             });
                         });
@@ -79,11 +79,11 @@ const requestListener = function(req,res){
             case 'getRecipe':
                 id = data['id'];
                 sql = `select * from recettes_instructions where id=${id};`;
-                log(ip,action,sql);
                 recettesDB.all(sql,[],(err,rows)=>{
                     if(err){throw err;}
                     else{
                         rows.forEach((row)=>{
+                            log(ip,action,sql);
                             res.end(JSON.stringify(row['instructions']));
                         });
                     }
@@ -92,11 +92,11 @@ const requestListener = function(req,res){
             case 'getQuantity':
                 id = data['id'];
                 sql = `select * from recettes_ingredients where id=${id};`;
-                log(ip,action,sql);
                 recettesDB.all(sql,[],(err,rows)=>{
                     if(err){throw err;}
                     else{
                         rows.forEach((row)=>{
+                            log(ip,action,sql);
                             res.end(JSON.stringify(row['ingredients']));
                         });
                     }
@@ -105,11 +105,11 @@ const requestListener = function(req,res){
             case 'getTime':
                 id = data['id'];
                 sql = `select * from recettes_temps where id=${id};`;
-                log(ip,action,sql);
                 recettesDB.all(sql,[],(err,rows)=>{
                     if(err){throw err;}
                     else{
                         rows.forEach((row)=>{
+                            log(ip,action,sql);
                             res.end(JSON.stringify(`${row['temps_preparation']}#${row['temps_cuisson']}`));
                         });
                     }
@@ -127,10 +127,9 @@ const requestListener = function(req,res){
                     code += `[${element}]/`;
                 }
                 sql = `insert into recettes (nom,code) values ('${Rname}','${code}');`;
-                log(ip,action,sql);
                 recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                sql = `select id from recettes where nom='${Rname}';`;
                 log(ip,action,sql);
+                sql = `select id from recettes where nom='${Rname}';`;
                 recettesDB.all(sql,[],(err,row)=>{
                     if(err){throw err}
                     else{
@@ -142,27 +141,48 @@ const requestListener = function(req,res){
                         content = content.slice(0,-1);
                         content += ']}';
                         sql = `insert into recettes_ingredients (id,ingredients) values ('${id}','${content}');`;
-                        log(ip,action,sql);
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                        log(ip,action,sql);
                         content = '{';
                         for(a=0;a!=Rstep.length;a++){content += `"${a+1}":"${Rstep[a]}",`;}
                         content += `"etapes":${Rstep.length}}`;
                         sql = `insert into recettes_instructions (id,instructions) values ('${id}','${content}');`;
-                        log(ip,action,sql);
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                        log(ip,action,sql);
                         sql = `insert into recettes_temps (id,temps_preparation,temps_cuisson) values ("${id}","${Rtime[0]}","${Rtime[1]}");`;
-                        log(ip,action,sql);
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                        log(ip,action,sql);
                     }
                 });
+                log(ip,action,sql);
                 res.end('success');
                 break;
             case 'addIngredients':
                 Iname = data['value'];
                 sql = `insert into ingredients (nom) values ('${Iname}');`;
-                log(ip,action,sql);
                 ingredientsDB.all(sql,[],(err)=>{if(err){throw err;}});
+                log(ip,action,sql);
                 res.end('success');
+                break;
+            case 'searchRecipeByName':
+                type = data['type'];
+                if(type == 'random'){
+                    sql = 'select id,nom from recettes order by random() limit 5;';
+                    id = '';
+                    names = '';
+                    recettesDB.all(sql,[],(err,rows)=>{
+                        if(err){throw err;}
+                        else{
+                            rows.forEach(element =>{
+                                id+= `"${element['id']}",`;
+                                names+= `"${element['nom']}",`;
+                            });
+                            data = `{"id":[${id.slice(0,-1)}],"name":[${names.slice(0,-1)}]}`;
+                            log(ip,action,sql);
+                            res.end(data);
+                        }
+                    })
+                }
                 break;
         }
     }
@@ -185,7 +205,7 @@ function log(ip,action,content){
     fileName = `logs/${date}-${month}-${year}.txt`;
     time = `${hours}:${minutes}:${seconds}`;
     var end = new Date() - start;
-    data = `${time} | (${end}ms) ${ip} - [${action}] - ${content}`;
-    console.log(data);
-    fs.appendFile(fileName,data+'\n',(err)=>{if(err){throw err;}});
+    Ldata = `${time} | (${end}ms) ${ip} - [${action}] - ${content}`;
+    console.log(Ldata);
+    fs.appendFile(fileName,Ldata+'\n',(err)=>{if(err){throw err;}});
 }
