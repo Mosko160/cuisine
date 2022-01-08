@@ -24,7 +24,8 @@ function displayRecipe(dataNonParse){
     d = document.createElement('div');
     d.id = 'containerR';
     for(a=0; a!=l; a++){
-        element = document.createElement('p');
+        element = document.createElement('div');
+        element.setAttribute('class','recipeList');
         element.innerHTML = Rname[a];
         element.setAttribute('onclick',`recipeSelected(${Rid[a]})`);
         d.appendChild(element);

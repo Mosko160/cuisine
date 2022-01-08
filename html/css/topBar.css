@@ -11,20 +11,48 @@
     right:5%;
     width: 1.5em;
     position: absolute;
+    border-radius: 50%;
+}
+
+.homeIcon:hover{
+    animation: pulse 300ms 1;
 }
 
 .searchIconByIngredients{
     width: 1.5em;
     position: absolute;
+    border-radius: 50%;
 }
 
+.searchIconByIngredients:hover{
+    animation: pulse 300ms 1;
+}
 .searchIconRecipe{
     width: 1.5em;
     position: absolute;
     left:5%;
+    border-radius: 50%;
+}
+
+.searchIconRecipe:hover{
+    animation: pulse 300ms 1;
 }
 
 .ideaIcon{
     width: 1.5em;
     position: absolute;
+    border-radius: 50%;
+}
+
+.ideaIcon:hover{
+    animation: pulse 300ms 1;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: black 0 0 0 0;
+    }
+    75%{
+        box-shadow: rgba(0, 0, 0, 0) 0 0 0 16px;
+    }
 }

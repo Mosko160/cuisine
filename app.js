@@ -184,7 +184,7 @@ const requestListener = function(req,res){
                     });
                 }else{
                     content = data['content'];
-                    sql = `select id,nom from recettes where nom like '%${content}%'`;
+                    sql = `select id,nom from recettes where nom like '%${content}%' limit 5`;
                     id = '';
                     names = '';
                     recettesDB.all(sql,[],(err,rows)=>{

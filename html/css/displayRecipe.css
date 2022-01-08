@@ -1,0 +1,26 @@
+.recipeList{
+    display: block;
+    background-color: rgb(171, 250, 107);
+    color: white;
+    height: 2.5em;
+    width: 90%;
+    text-align:center;
+    padding-top: 1em;
+    border-radius: 10px;
+    border: 3px solid;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.recipeList:hover{
+    background-color: white;
+    color: rgb(171, 250, 107);
+    border-color: rgb(171, 250, 107);
+}
+
+.searchInput{
+    height: 2.5em;
+    border: 2px,solid,#555;
+    border-radius: 20px;
+    text-align: center;
+}
