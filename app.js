@@ -181,7 +181,24 @@ const requestListener = function(req,res){
                             log(ip,action,sql);
                             res.end(data);
                         }
-                    })
+                    });
+                }else{
+                    content = data['content'];
+                    sql = `select id,nom from recettes where nom like '%${content}%'`;
+                    id = '';
+                    names = '';
+                    recettesDB.all(sql,[],(err,rows)=>{
+                        if(err){throw err;}
+                        else{
+                            rows.forEach(element =>{
+                                id+= `"${element['id']}",`;
+                                names+= `"${element['nom']}",`;
+                            });
+                            data = `{"id":[${id.slice(0,-1)}],"name":[${names.slice(0,-1)}]}`;
+                            log(ip,action,sql);
+                            res.end(data);
+                        }
+                    });
                 }
                 break;
         }

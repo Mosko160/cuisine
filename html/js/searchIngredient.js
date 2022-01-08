@@ -51,7 +51,6 @@ function displayIngredients(){
 }
 
 function removeIngredient(i){
-    console.log(listIngredientsId)
     listIngredientsId.splice(i,1);
     listIngredientsName.splice(i,1)
     displayIngredients();
