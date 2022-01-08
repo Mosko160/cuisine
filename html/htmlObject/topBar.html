@@ -1,4 +1,8 @@
 <link rel="stylesheet" href="/css/topBar.css">
 <div class='topBack'>
-    <h1>Cuisinons</h1><img class='homeIcon' src='/images/home.png' onclick="home()">
+    <h1>Cuisinons</h1>
+    <img src="/images/search.png" class='searchIconByIngredients' id='searchIconByIngredients' onload="setRight()" onclick='searchT()'>
+    <img class='homeIcon' src='/images/home.png' onclick="home()">
+    <img class='searchIconRecipe' src='/images/recipeBook.png' onclick='searchR()'>
+    <img class='ideaIcon' src='/images/idea.png' onclick='ideaC()' id='ideaIcon' onload="setLeft()">
 </div>

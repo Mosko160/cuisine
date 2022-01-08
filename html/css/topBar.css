@@ -12,3 +12,19 @@
     width: 1.5em;
     position: absolute;
 }
+
+.searchIconByIngredients{
+    width: 1.5em;
+    position: absolute;
+}
+
+.searchIconRecipe{
+    width: 1.5em;
+    position: absolute;
+    left:5%;
+}
+
+.ideaIcon{
+    width: 1.5em;
+    position: absolute;
+}
