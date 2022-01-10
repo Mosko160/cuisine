@@ -14,7 +14,7 @@
     border-radius: 50%;
 }
 
-.homeIcon:hover{
+.homeIcon:active{
     animation: pulse 300ms 1;
 }
 
@@ -24,7 +24,7 @@
     border-radius: 50%;
 }
 
-.searchIconByIngredients:hover{
+.searchIconByIngredients:active{
     animation: pulse 300ms 1;
 }
 .searchIconRecipe{
@@ -34,7 +34,7 @@
     border-radius: 50%;
 }
 
-.searchIconRecipe:hover{
+.searchIconRecipe:active{
     animation: pulse 300ms 1;
 }
 
@@ -44,7 +44,7 @@
     border-radius: 50%;
 }
 
-.ideaIcon:hover{
+.ideaIcon:active{
     animation: pulse 300ms 1;
 }
 

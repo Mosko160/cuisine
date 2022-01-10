@@ -3,7 +3,7 @@ $(function(){
 });
 
 function home(){
-    document.location.replace('/');
+    location = '/';
 }
 
 function setRight(){
@@ -11,15 +11,15 @@ function setRight(){
 }
 
 function searchT(){
-    document.location.replace('/searchByIngredients.html');
+    location = '/searchByIngredients.html';
 }
 
 function searchR(){
-    document.location.replace('/searchRecipe.html');
+    location = '/searchRecipe.html';
 }
 
 function ideaC(){
-    document.location.replace('/ideas.html');
+    location = '/ideas.html';
 }
 
 function setLeft(){

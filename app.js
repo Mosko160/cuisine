@@ -54,6 +54,7 @@ const requestListener = function(req,res){
                             resultsId.push(row.id)
                         });
                     }
+                    res.setHeader('Content-Type','text/plain');
                     res.end(JSON.stringify([resultsName,resultsId]));
                 });
                 log(ip,action,sql);
@@ -84,6 +85,7 @@ const requestListener = function(req,res){
                                     id.push(row['id']);
                                 });
                                 log(ip,action,sql);
+                                res.setHeader('Content-Type','text/plain');
                                 res.end(JSON.stringify([name,id]));
                             });
                         });
@@ -98,6 +100,7 @@ const requestListener = function(req,res){
                     else{
                         rows.forEach((row)=>{
                             log(ip,action,sql);
+                            res.setHeader('Content-Type','text/plain');
                             res.end(JSON.stringify(row['instructions']));
                         });
                     }
@@ -111,6 +114,7 @@ const requestListener = function(req,res){
                     else{
                         rows.forEach((row)=>{
                             log(ip,action,sql);
+                            res.setHeader('Content-Type','text/plain');
                             res.end(JSON.stringify(row['ingredients']));
                         });
                     }
@@ -124,6 +128,7 @@ const requestListener = function(req,res){
                     else{
                         rows.forEach((row)=>{
                             log(ip,action,sql);
+                            res.setHeader('Content-Type','text/plain');
                             res.end(JSON.stringify(`${row['temps_preparation']}#${row['temps_cuisson']}`));
                         });
                     }
@@ -169,6 +174,7 @@ const requestListener = function(req,res){
                     }
                 });
                 log(ip,action,sql);
+                res.setHeader('Content-Type','text/plain');
                 res.end('success');
                 break;
             case 'addIngredients':
@@ -176,6 +182,7 @@ const requestListener = function(req,res){
                 sql = `insert into ingredients (nom) values ('${Iname}');`;
                 ingredientsDB.all(sql,[],(err)=>{if(err){throw err;}});
                 log(ip,action,sql);
+                res.header('Content-Type','text/plain');
                 res.end('success');
                 break;
             case 'searchRecipeByName':
@@ -193,6 +200,7 @@ const requestListener = function(req,res){
                             });
                             data = `{"id":[${id.slice(0,-1)}],"name":[${names.slice(0,-1)}]}`;
                             log(ip,action,sql);
+                            res.setHeader('Content-Type','text/plain');
                             res.end(data);
                         }
                     });
@@ -210,6 +218,7 @@ const requestListener = function(req,res){
                             });
                             data = `{"id":[${id.slice(0,-1)}],"name":[${names.slice(0,-1)}]}`;
                             log(ip,action,sql);
+                            res.setHeader('Content-Type','text/plain');
                             res.end(data);
                         }
                     });
