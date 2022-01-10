@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const qs = require('querystring');
 const sql = require('sqlite3').verbose();
 
-const host = '10.0.0.42';
+const host = '127.0.0.1';
 const port = 80;
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
@@ -20,7 +20,21 @@ const requestListener = function(req,res){
         if(file == '/'){file='/index.html';}
         fs.readFile(__dirname+'/html'+file).then(contents =>{
             log(ip,'getFile',__dirname+'/html'+file)
-            res.setHeader('Content-Type','text/html');
+            fileType = file.split('.')[file.split('.').length - 1];
+            switch(fileType){
+                case 'html':
+                    res.setHeader('Content-Type','text/html');
+                    break;
+                case 'css':
+                    res.setHeader('Content-Type','text/css');
+                    break;
+                case 'js':
+                    res.setHeader('Content-Type','application/javascript');
+                    break;
+                case 'png':
+                    res.setHeader('Content-Type','image/png');
+                    break;
+            }
             res.writeHead(200);
             res.end(contents);
         });
@@ -223,6 +237,6 @@ function log(ip,action,content){
     time = `${hours}:${minutes}:${seconds}`;
     var end = new Date() - start;
     Ldata = `${time} | (${end}ms) ${ip} - [${action}] - ${content}`;
-    console.log(Ldata);
+    //console.log(Ldata);
     fs.appendFile(fileName,Ldata+'\n',(err)=>{if(err){throw err;}});
 }
