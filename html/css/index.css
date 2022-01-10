@@ -3,25 +3,5 @@
   border: none;
   padding: 10px 44px;
   position: relative;
-}
-
-.btn::before {
-  transition: all 0.55s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  content: "";
-  width: 50%;
-  height: 100%;
-  background: rgb(174, 204, 204);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.btn .btn-text {
-  color: grey;
-  mix-blend-mode: difference;
-}
-
-.btn:hover::before {
-  background: rgb(174, 204, 204);
-  width: 100%;
+  background-color: rgb(174, 204, 204);
 }

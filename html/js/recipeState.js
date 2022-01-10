@@ -14,7 +14,7 @@ function next(){
 function state3(){
     for(element of listIngredientsName){
         p = document.createElement('p');
-        p.innerHTML = element;
+        p.innerHTML = element+' : ';
         i = document.createElement('input');
         i.id = 'inputQt'+element;
         p.appendChild(i);

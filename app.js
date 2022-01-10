@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const qs = require('querystring');
 const sql = require('sqlite3').verbose();
 
-const host = '192.168.96.97';
+const host = '127.0.0.1';
 const port = 80;
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
@@ -182,13 +182,14 @@ const requestListener = function(req,res){
                 sql = `insert into ingredients (nom) values ('${Iname}');`;
                 ingredientsDB.all(sql,[],(err)=>{if(err){throw err;}});
                 log(ip,action,sql);
-                res.header('Content-Type','text/plain');
+                res.setHeader('Content-Type','text/plain');
                 res.end('success');
                 break;
             case 'searchRecipeByName':
                 type = data['type'];
                 if(type == 'random'){
-                    sql = 'select id,nom from recettes order by random() limit 5;';
+                    if(data['recipeType'] == 'none'){sql = 'select id,nom from recettes order by random() limit 5;';}
+                    else{sql = `select id,nom from recettes where type='${data['recipeType']}' order by random() limit 5;`;}
                     id = '';
                     names = '';
                     recettesDB.all(sql,[],(err,rows)=>{
@@ -206,7 +207,8 @@ const requestListener = function(req,res){
                     });
                 }else{
                     content = data['content'];
-                    sql = `select id,nom from recettes where nom like '%${content}%' limit 5`;
+                    if(data['recipeType'] == 'none'){sql = `select id,nom from recettes where nom like '%${content}%' limit 5`;}
+                    else{sql = `select id,nom from recettes where nom like '%${content}%' and type='${data['recipeType']}' limit 5`;}
                     id = '';
                     names = '';
                     recettesDB.all(sql,[],(err,rows)=>{

@@ -5,11 +5,11 @@ $(function(){
 function searchForRecipe(){
     dataI = document.getElementById('searchRecipeName').value;
     if(dataI == ''){
-        $.get('ajax',{action:'searchRecipeByName',type:'random'},(data,status)=>{
+        $.get('ajax',{action:'searchRecipeByName',type:'random',recipeType:document.getElementById('recipeType').value},(data,status)=>{
             displayRecipe(data);
         });
     }else{
-        $.get('ajax',{action:'searchRecipeByName',type:'search',content:dataI},(data,status)=>{
+        $.get('ajax',{action:'searchRecipeByName',type:'search',content:dataI,recipeType:document.getElementById('recipeType').value},(data,status)=>{
             displayRecipe(data);
         });
     }
@@ -34,5 +34,5 @@ function displayRecipe(dataNonParse){
 }
 
 function recipeSelected(id){
-    window.location.replace(`recipe.html?recipe=${id}`)
+    location = `recipe.html?recipe=${id}`;
 }
