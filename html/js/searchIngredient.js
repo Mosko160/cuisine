@@ -5,6 +5,7 @@ $(function(){
 var dataI;
 var listIngredientsId = [];
 var listIngredientsName = [];
+autoSearch = false;
 
 function changeInputValue(reset){
     $.get('ajax',{action:'rechercheIngredient',value:document.getElementById('searchInput').value},(data,status)=>{
@@ -48,6 +49,9 @@ function displayIngredients(){
         div.appendChild(p);
     }
     document.getElementById('containsIngredients').appendChild(div);
+    if(autoSearch){
+        searchForRecipe();
+    }
 }
 
 function removeIngredient(i){

@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const qs = require('querystring');
 const sql = require('sqlite3').verbose();
 
-const host = '127.0.0.1';
+const host = '192.168.96.97';
 const port = 80;
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
@@ -223,6 +223,26 @@ const requestListener = function(req,res){
                         }
                     });
                 }
+                break;
+                case 'getIdeas':
+                    recipeType = data['type'];
+                    sql = '';
+                    if(recipeType == 'none'){sql = 'select name,link from liste;'}
+                    else{sql = `select name,link from liste where type="${recipeType}";`}
+                    ideasDB.all(sql,[],(err,rows)=>{
+                        if(err){throw err;}
+                        else{
+                            ideaName = '';
+                            ideaLink = '';
+                            rows.forEach(element =>{
+                                ideaName += `"${element['name']}",`;
+                                ideaLink += `"${element['link']}",`;
+                            });
+                            data = `{"names" : [${ideaName.slice(0,-1)}],"links":[${ideaLink.slice(0,-1)}]}`;
+                            res.setHeader('Content-Type','text/plain');
+                            res.end(data);
+                        }
+                    });
                 break;
         }
     }

@@ -2,7 +2,7 @@ $(function(){
     $("#searchRecipes").load("/htmlObject/searchRecipes.html"); 
 });
 
-function search(){
+function searchForRecipe(){
     $.get('ajax',{action:'rechercheRecette',value:JSON.stringify(listIngredientsId)},(data,status)=>{
         displayRecipes(JSON.parse(data));
     });

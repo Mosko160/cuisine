@@ -1,0 +1,24 @@
+<!-- 
+Pour ajouter ce code il faut appeler :
+<script src="/js/displayIdeas.js"></script>
+<div id='displayIdeas'></div>
+-->
+<html>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+<link rel="stylesheet" href="/css/displayIdeas.css" />
+    <center>
+        <select name="recipeType" id="recipeType" onchange="getIdeas()">
+            <option value="none">Selectionner type de plat</option>
+            <option value="entre">Entrée</option>
+            <option value="plat">Plat</option>
+            <option value="dessert">Dessert</option>
+            <option value="gouter">Gouter</option>
+            <option value="gateau">Gateau</option>
+            <option value="boisson">Boisson</option>
+        </select>
+        <div id='container'>
+            <div id='containerIdeas'></div>
+        </div>
+    </center>
+    <script>getIdeas();</script>
+</html>
