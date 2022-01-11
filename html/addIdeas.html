@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <style>body { margin: 0; padding: 0; }</style>
+        <script src="/jquery-3.6.0.js"></script>
+        <script src="/js/topBar.js"></script>
+        <script src="/js/addIdeas.js"></script>
+    </head>
+    <body>
+        <div id='topBar'></div>
+        <center>
+            <p>Nom : <input id='ideaName'></input></p> 
+            <p>Lien : <input id='ideaLink'></input></p>
+            <p></p><select name="recipeType" id="recipeType">
+                <option value="none">Selectionner type de plat</option>
+                <option value="entre">Entrée</option>
+                <option value="plat">Plat</option>
+                <option value="dessert">Dessert</option>
+                <option value="gouter">Gouter</option>
+                <option value="gateau">Gateau</option>
+                <option value="boisson">Boisson</option>
+            </select></p>
+            <button onclick='addIdea()'>Ajouter</button>
+        </center>
+    </body>
+</html>

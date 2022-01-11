@@ -4097,3 +4097,5 @@
 18:9:35 | (3ms) 127.0.0.1 - [searchRecipeByName] - select id,nom from recettes order by random() limit 5;
 18:9:36 | (3ms) 127.0.0.1 - [searchRecipeByName] - select id,nom from recettes where nom like '%c%' limit 5
 18:9:37 | (3ms) 127.0.0.1 - [searchRecipeByName] - select id,nom from recettes where nom like '%cr%' limit 5
+18:12:17 | (3ms) 127.0.0.1 - [searchRecipeByName] - select id,nom from recettes where nom like '%c%' limit 5
+18:12:17 | (2ms) 127.0.0.1 - [searchRecipeByName] - select id,nom from recettes order by random() limit 5;

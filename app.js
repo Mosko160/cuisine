@@ -229,22 +229,41 @@ const requestListener = function(req,res){
                 case 'getIdeas':
                     recipeType = data['type'];
                     sql = '';
-                    if(recipeType == 'none'){sql = 'select name,link from liste;'}
-                    else{sql = `select name,link from liste where type="${recipeType}";`}
+                    if(recipeType == 'none'){sql = 'select id,name,link from liste;'}
+                    else{sql = `select id,name,link from liste where type="${recipeType}";`}
                     ideasDB.all(sql,[],(err,rows)=>{
                         if(err){throw err;}
                         else{
                             ideaName = '';
                             ideaLink = '';
+                            ideaId = '';
                             rows.forEach(element =>{
                                 ideaName += `"${element['name']}",`;
                                 ideaLink += `"${element['link']}",`;
+                                ideaId += `"${element['id']}",`;
                             });
-                            data = `{"names" : [${ideaName.slice(0,-1)}],"links":[${ideaLink.slice(0,-1)}]}`;
+                            requestS = `{"names" : [${ideaName.slice(0,-1)}],"links":[${ideaLink.slice(0,-1)}], "id":[${ideaId.slice(0,-1)}]}`;
+                            log(ip,action,sql);
                             res.setHeader('Content-Type','text/plain');
-                            res.end(data);
+                            res.end(requestS);
                         }
                     });
+                break;
+                case 'deleteIdeas':
+                    id = data['id'];
+                    sql = `delete from liste where id="${id}";`;
+                    ideasDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    log(ip,action,sql);
+                    res.setHeader('Content-Type','text/plain');
+                    res.end('success');
+                break;
+                case 'addIdea':
+                    sql = `insert into liste (name,link,type) values ("${data['ideaName']}","${data['ideaLink']}","${data['type']}")`;
+                    ideasDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    log(ip,action,sql);
+                    console.log(sql);
+                    res.setHeader('Content-Type','text/plain');
+                    res.end('success');
                 break;
         }
     }
