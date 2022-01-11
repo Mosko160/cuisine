@@ -10,16 +10,20 @@ autoSearch = false;
 function changeInputValue(reset){
     $.get('ajax',{action:'rechercheIngredient',value:document.getElementById('searchInput').value},(data,status)=>{
         dataI = JSON.parse(data);
+        while(dataI[0].length < 3){dataI[0].push(' ');}
         for(a=0;a!=3;a++){
             if(reset){
                 document.getElementById(`pre${a}`).style.display = 'none';
             }else{
-                while(dataI[0].length < 3){dataI[0].push(' ');}
-                document.getElementById(`pre${a}`).innerHTML = dataI[0][a];
-                if(dataI[0][a] == ' '){
-                    document.getElementById(`pre${a}`).style.display = 'none';
+                if(JSON.stringify(dataI[1]) != JSON.stringify([1,2,3])){
+                    document.getElementById(`pre${a}`).innerHTML = dataI[0][a];
+                    if(dataI[0][a] == ' '){
+                        document.getElementById(`pre${a}`).style.display = 'none';
+                    }else{
+                        document.getElementById(`pre${a}`).style.display = 'block';
+                    }
                 }else{
-                    document.getElementById(`pre${a}`).style.display = 'block';
+                    changeInputValue(true)
                 }
             }   
         }
