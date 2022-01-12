@@ -23,5 +23,5 @@ function displayRecipes(recipes){
 }
 
 function recipeSelected(id){
-    window.location.replace(`recipe.html?recipe=${id}`)
+    location = `/html/recipe.html?recipe=${id}`;
 }

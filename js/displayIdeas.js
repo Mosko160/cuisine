@@ -39,5 +39,5 @@ function ideaClicked(id,url){
 }
 
 function addIdeas(){
-    location = '/addIdeas.html';
+    location = '/html/addIdeas.html';
 }

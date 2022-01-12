@@ -16,9 +16,9 @@ const requestListener = function(req,res){
     start = new Date();
     var ip = req.headers['x-forwarded-for'] ||req.socket.remoteAddress || null;
     file = url.parse(req.url).pathname;
-    if(file != '/ajax'){
-        if(file == '/'){file='/index.html';}
-        fs.readFile(__dirname+'/html'+file).then(contents =>{
+    if(file != '/html/ajax'){
+        if(file == '/'){file='/html/index.html';}
+        fs.readFile(__dirname+file).then(contents =>{
             log(ip,'getFile',__dirname+'/html'+file)
             fileType = file.split('.')[file.split('.').length - 1];
             switch(fileType){

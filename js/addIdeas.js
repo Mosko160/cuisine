@@ -6,6 +6,6 @@ function addIdea(){
         type: document.getElementById('recipeType').value
     };
     $.get('ajax',request,(data,status)=>{
-        location = '/ideas.html';
+        location = '/html/ideas.html';
     });
 }

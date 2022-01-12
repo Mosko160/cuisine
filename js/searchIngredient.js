@@ -23,7 +23,7 @@ function changeInputValue(reset){
                         document.getElementById(`pre${a}`).style.display = 'block';
                     }
                 }else{
-                    changeInputValue(true)
+                    changeInputValue(true);
                 }
             }   
         }

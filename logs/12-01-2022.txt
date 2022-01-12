@@ -1,0 +1,401 @@
+14:41:56 | (15ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/ideas.html
+14:41:56 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/displayIdeas.js
+14:41:56 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/displayIdeas.js
+14:41:56 | (8ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/displayIdeas.js
+14:41:56 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/displayIdeas.html
+14:41:56 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/displayIdeas.html
+14:41:57 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:41:57 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:41:57 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:41:57 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:41:57 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:41:57 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/displayIdeas.css
+14:41:57 | (16ms) 127.0.0.1 - [getIdeas] - select id,name,link from liste;
+14:42:1 | (1ms) 127.0.0.1 - [getIdeas] - select id,name,link from liste where type="entre";
+14:42:3 | (1ms) 127.0.0.1 - [getIdeas] - select id,name,link from liste;
+14:42:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/ideas.html
+14:42:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:8 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/displayIdeas.html
+14:42:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/displayIdeas.html
+14:42:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:42:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:42:8 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/displayIdeas.css
+14:42:8 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/displayIdeas.css
+14:42:8 | (7ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/displayIdeas.css
+14:42:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:42:8 | (1ms) 127.0.0.1 - [getIdeas] - select id,name,link from liste;
+14:42:11 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/searchByIngredients.html
+14:42:12 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:12 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:12 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+14:42:12 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+14:42:12 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:42:12 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:42:12 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:42:12 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:42:12 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:42:12 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:42:12 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:42:12 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:42:12 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:42:12 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:42:16 | (3ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'p%' limit 3;
+14:42:18 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:42:18 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:42:18 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:42:18 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:42:38 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/searchByIngredients.html
+14:42:38 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:38 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:38 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:38 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:42:38 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+14:42:38 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:42:38 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:42:39 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:42:39 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:42:39 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:42:39 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:42:39 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:42:39 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:42:39 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:49:35 | (9ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/index.html
+14:49:35 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:49:35 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:49:55 | (15ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/index.html
+14:49:56 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:49:56 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:49:56 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:49:56 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:49:56 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:49:56 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:49:56 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:49:56 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:49:56 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:52:31 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+14:52:31 | (21ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+14:52:31 | (24ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+14:52:31 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:52:31 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:52:31 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:52:33 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/index.html
+14:52:33 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:52:33 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:52:33 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:52:33 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:52:33 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:52:33 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:52:33 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:52:33 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:52:33 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:53:1 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/index.html
+14:53:1 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:53:1 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:53:1 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:53:1 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:53:1 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:53:1 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:53:1 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:1 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:1 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:53:3 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/addIngredients.html
+14:53:3 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:53:3 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:53:3 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:53:3 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addIngredients.js
+14:53:3 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:53:3 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+14:53:3 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:3 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:3 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:3 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:3 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:3 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:53:6 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/searchRecipe.html
+14:53:6 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:53:6 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:53:6 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/displayRecipes.js
+14:53:6 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:53:6 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/displayRecipes.html
+14:53:6 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:53:6 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:53:6 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:6 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:6 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:53:6 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/displayRecipe.css
+14:53:8 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/ideas.html
+14:53:8 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:53:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:53:8 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/displayIdeas.js
+14:53:8 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:53:8 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/displayIdeas.html
+14:53:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:53:8 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:53:8 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/ajax
+14:53:8 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/ajax
+14:53:8 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/ajax
+14:53:8 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/displayIdeas.css
+14:53:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/searchByIngredients.html
+14:53:10 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:53:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:53:10 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:53:10 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:53:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+14:53:10 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:53:10 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:53:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:53:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:53:10 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/recipeBook.png
+14:53:10 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/recipeBook.png
+14:53:10 | (7ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/recipeBook.png
+14:53:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:53:10 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:14 | (15ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/searchByIngredients.html
+14:54:14 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:54:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:54:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:14 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+14:54:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+14:54:14 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:14 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:54:14 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:54:14 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:54:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:54:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:14 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:14 | (7ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:16 | (10ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;
+14:54:18 | (0ms) 127.0.0.1 - [rechercheRecette] - select count(nom) from ingredients;
+14:54:18 | (6ms) 127.0.0.1 - [rechercheRecette] - select * from recettes where (code like '%[1]/%' ) and ( code not like '%[2]/%' and code not like '%[3]/%' and code not like '%[4]/%' and code not like '%[5]/%' and code not like '%[6]/%' and code not like '%[7]/%' and code not like '%[8]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+14:54:18 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:20 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'b%' limit 3;
+14:54:20 | (0ms) 127.0.0.1 - [rechercheRecette] - select count(nom) from ingredients;
+14:54:20 | (2ms) 127.0.0.1 - [rechercheRecette] - select * from recettes where (code like '%[1]/%' or code like '%[8]/%' ) and ( code not like '%[2]/%' and code not like '%[3]/%' and code not like '%[4]/%' and code not like '%[5]/%' and code not like '%[6]/%' and code not like '%[7]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+14:54:20 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:21 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'c%' limit 3;
+14:54:23 | (1ms) 127.0.0.1 - [rechercheRecette] - select count(nom) from ingredients;
+14:54:23 | (5ms) 127.0.0.1 - [rechercheRecette] - select * from recettes where (code like '%[1]/%' or code like '%[8]/%' or code like '%[7]/%' ) and ( code not like '%[2]/%' and code not like '%[3]/%' and code not like '%[4]/%' and code not like '%[5]/%' and code not like '%[6]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+14:54:23 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:25 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 's%' limit 3;
+14:54:26 | (0ms) 127.0.0.1 - [rechercheRecette] - select count(nom) from ingredients;
+14:54:26 | (1ms) 127.0.0.1 - [rechercheRecette] - select * from recettes where (code like '%[1]/%' or code like '%[8]/%' or code like '%[7]/%' or code like '%[5]/%' ) and ( code not like '%[2]/%' and code not like '%[3]/%' and code not like '%[4]/%' and code not like '%[6]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+14:54:26 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:27 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'f%' limit 3;
+14:54:28 | (0ms) 127.0.0.1 - [rechercheRecette] - select count(nom) from ingredients;
+14:54:28 | (3ms) 127.0.0.1 - [rechercheRecette] - select * from recettes where (code like '%[1]/%' or code like '%[8]/%' or code like '%[7]/%' or code like '%[5]/%' or code like '%[3]/%' ) and ( code not like '%[2]/%' and code not like '%[4]/%' and code not like '%[6]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+14:54:28 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:30 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/recipe.html
+14:54:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:30 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+14:54:30 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/getRecipe.css
+14:54:30 | (1ms) 127.0.0.1 - [getQuantity] - select * from recettes_ingredients where id=1;
+14:54:30 | (1ms) 127.0.0.1 - [getRecipe] - select * from recettes_instructions where id=1;
+14:54:30 | (1ms) 127.0.0.1 - [getTime] - select * from recettes_temps where id=1;
+14:54:30 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:54:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:54:30 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:30 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:33 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/index.html
+14:54:33 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:33 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:33 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:54:33 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:33 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:54:33 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:54:33 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:33 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:33 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:35 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/addIngredients.html
+14:54:35 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:54:35 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:54:35 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:54:35 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:54:35 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:35 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+14:54:35 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:54:36 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:54:36 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:54:36 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:54:36 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:36 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:54:41 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'p%' limit 3;
+14:54:41 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'po%' limit 3;
+14:54:41 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poi%' limit 3;
+14:54:46 | (1ms) 127.0.0.1 - [addIngredients] - insert into ingredients (nom) values ('poivre');
+14:54:48 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poiv%' limit 3;
+14:54:49 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poi%' limit 3;
+14:54:49 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'po%' limit 3;
+14:54:49 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'p%' limit 3;
+14:54:49 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:49 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:49 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:49 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/searchByIngredients.html
+14:54:53 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+14:54:53 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:53 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:54:53 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:53 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:53 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:53 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:54 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/index.html
+14:54:54 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:54 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:54 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:54:54 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:54 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:54:54 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:54 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:54 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:54 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:55 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/addRecipe.html
+14:54:55 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:54:55 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:54:55 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/recipeState.js
+14:54:55 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addRecipe.js
+14:54:55 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:55 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:54:56 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:56 | (5ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:56 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:56 | (7ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:56 | (13ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:54:56 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:54:56 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addStep.js
+14:54:56 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+14:54:56 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/addStep.html
+14:54:56 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:55:3 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'p%' limit 3;
+14:55:3 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'po%' limit 3;
+14:55:3 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poi%' limit 3;
+14:55:5 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:55:7 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;
+14:55:7 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:55:26 | (4ms) 127.0.0.1 - [addRecipe] - insert into recettes (nom,code) values ('Test','[22]/[1]/');
+14:55:26 | (5ms) 127.0.0.1 - [addRecipe] - select id from recettes where nom='Test';
+14:55:26 | (29ms) 127.0.0.1 - [addRecipe] - insert into recettes_ingredients (id,ingredients) values ('3','{"poivre":"Beaucoup","oeuf":"7","liste":["poivre","oeuf"]}');
+14:55:26 | (30ms) 127.0.0.1 - [addRecipe] - insert into recettes_instructions (id,instructions) values ('3','{"1":"LOL","2":"aucune","etapes":2}');
+14:55:26 | (30ms) 127.0.0.1 - [addRecipe] - insert into recettes_temps (id,temps_preparation,temps_cuisson) values ("3","Test","Test");
+14:55:26 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/index.html
+14:55:26 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:55:26 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:55:26 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:55:26 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:55:26 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:55:26 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:55:26 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:55:26 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:55:26 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:55:29 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/searchByIngredients.html
+14:55:29 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:55:29 | (4ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:55:29 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchRecipes.js
+14:55:29 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:55:30 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+14:55:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+14:55:30 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:55:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:55:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:55:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:55:30 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:55:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/recipeBook.png
+14:55:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/idea.png
+14:55:30 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:55:32 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'p%' limit 3;
+14:55:32 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'po%' limit 3;
+14:55:34 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poi%' limit 3;
+14:55:34 | (2ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poiv%' limit 3;
+14:55:34 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poivf%' limit 3;
+14:55:34 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poivfr%' limit 3;
+14:55:35 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poivf%' limit 3;
+14:55:35 | (0ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poiv%' limit 3;
+14:55:36 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'poivr%' limit 3;
+14:55:36 | (0ms) 127.0.0.1 - [rechercheRecette] - select count(nom) from ingredients;
+14:55:36 | (1ms) 127.0.0.1 - [rechercheRecette] - select * from recettes where (code like '%[22]/%' ) and ( code not like '%[1]/%' and code not like '%[2]/%' and code not like '%[3]/%' and code not like '%[4]/%' and code not like '%[5]/%' and code not like '%[6]/%' and code not like '%[7]/%' and code not like '%[8]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+14:55:36 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:55:38 | (6ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like 'o%' limit 3;
+14:55:39 | (1ms) 127.0.0.1 - [rechercheRecette] - select count(nom) from ingredients;
+14:55:39 | (8ms) 127.0.0.1 - [rechercheRecette] - select * from recettes where (code like '%[22]/%' or code like '%[1]/%' ) and ( code not like '%[2]/%' and code not like '%[3]/%' and code not like '%[4]/%' and code not like '%[5]/%' and code not like '%[6]/%' and code not like '%[7]/%' and code not like '%[8]/%' and code not like '%[9]/%' and code not like '%[10]/%' and code not like '%[11]/%' and code not like '%[12]/%' and code not like '%[13]/%' and code not like '%[14]/%' and code not like '%[15]/%' and code not like '%[16]/%' and code not like '%[17]/%' and code not like '%[18]/%' and code not like '%[19]/%' and code not like '%[20]/%' and code not like '%[21]/%' );
+14:55:39 | (1ms) 127.0.0.1 - [rechercheIngredient] - select * from ingredients where nom like '%' limit 3;
+14:55:39 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/recipe.html
+14:55:40 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:55:40 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/getRecipe.js
+14:55:40 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:55:40 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:55:40 | (1ms) 127.0.0.1 - [getQuantity] - select * from recettes_ingredients where id=3;
+14:55:40 | (0ms) 127.0.0.1 - [getRecipe] - select * from recettes_instructions where id=3;
+14:55:40 | (1ms) 127.0.0.1 - [getTime] - select * from recettes_temps where id=3;
+14:55:40 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:55:40 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:55:40 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:55:40 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:55:40 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:55:40 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:10 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/searchByIngredients.html
+14:56:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:56:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:56:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:56:10 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:56:10 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+14:56:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchRecipes.html
+14:56:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:56:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:56:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchRecipe.css
+14:56:10 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/recipeBook.png
+14:56:10 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/recipeBook.png
+14:56:10 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:10 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:10 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:13 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/index.html
+14:56:13 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:56:13 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:56:13 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/index.css
+14:56:13 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:56:14 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:14 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:14 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:14 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/addRecipe.html
+14:56:14 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/jquery-3.6.0.js
+14:56:14 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/recipeState.js
+14:56:14 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addRecipe.js
+14:56:14 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/topBar.js
+14:56:15 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/recipeState.html
+14:56:15 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:56:15 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/searchIngredient.js
+14:56:15 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/search.png
+14:56:15 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/images/home.png
+14:56:15 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:15 | (2ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:15 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:15 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/addStep.js
+14:56:15 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/searchIngredients.html
+14:56:15 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/addStep.html
+14:56:15 | (10ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/searchIngredient.css
+14:56:19 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/searchRecipe.html
+14:56:19 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/displayRecipes.js
+14:56:19 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/displayRecipes.js
+14:56:19 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/js/displayRecipes.js
+14:56:19 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/topBar.html
+14:56:19 | (3ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/htmlObject/displayRecipes.html
+14:56:19 | (0ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:19 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/css/topBar.css
+14:56:19 | (1ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/ajax
+14:56:19 | (6ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/ajax
+14:56:19 | (8ms) 127.0.0.1 - [searchRecipeByName] - select id,nom from recettes order by random() limit 5;
+14:56:19 | (9ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/ajax
+14:56:19 | (11ms) 127.0.0.1 - [getFile] - /home/baptiste/Documents/cuisine/html/html/ajax

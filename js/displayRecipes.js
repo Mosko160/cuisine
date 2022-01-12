@@ -34,5 +34,5 @@ function displayRecipe(dataNonParse){
 }
 
 function recipeSelected(id){
-    location = `recipe.html?recipe=${id}`;
+    location = `/html/recipe.html?recipe=${id}`;
 }
