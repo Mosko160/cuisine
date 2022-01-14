@@ -1,52 +1,23 @@
-.ingredientList{
-    display: block;
-    background-color: rgb(255, 188, 144);
-    color: white;
-    height: 2.5em;
-    width: 90%;
-    text-align:center;
-    padding-top: 1em;
-    border-radius: 10px;
-    border: 3px solid;
-    transition: color 0.3s;
-    transition: background-color 0.3s;
-}
-.ingredientList:hover{
-    background-color: white;
-    color: rgb(255, 188, 144);
-    border-color: rgb(255, 188, 144);
+.btn {
+    margin: 20px auto;
+    border: none;
+    padding: 10px 44px;
+    position: relative;
+    background-color: rgb(174, 204, 204);
 }
 
-.ingredientListResearch{
-    display: none;
-    color: rgb(255, 188, 144);
-    background-color: white;
-    height: 2.5em;
-    width: 90%;
-    text-align:center;
-    padding-top: 1em;
-    border-radius: 10px;
-    border: 3px solid;
-    transition: color 0.3s;
-    transition: background-color 0.3s;
-}
-.ingredientListResearch:hover{
-    background-color: rgb(255, 188, 144);
-    color: white;
-    border-color: white;
-}
 
-.inputSearchContainer {
+.inputNameContainer {
     margin: 0 auto;
     text-align: center;
 }
-.inputSearchContainer span {
+.inputNameContainer span {
     position: relative;
     display: inline-block;
     margin: 30px 10px;
 }
  
-.inputSearch {
+.inputName {
     display: inline-block;
     width: 18em;
     padding: 10px 0 13px 15px;
@@ -54,11 +25,11 @@
     border: 0;
     border-radius: 3px;
     outline: 0;
-    text-indent: 7.5em;
+    text-indent: 3.3em;
     transition: all 0.3s ease-in-out;
 }
 
-.inputSearch + label {
+.inputName + label {
     display: inline-block;
     position: absolute;
     top: 8px;
@@ -75,7 +46,7 @@
     background: rgba(122, 184, 147, 0);
 }
 
-.inputSearch + label:after {
+.inputName + label:after {
     position: absolute;
     content: "";
     width: 0;
@@ -89,23 +60,23 @@
     transition: all 0.3s ease-in-out;
 }
   
-.inputSearch:focus,
-.inputSearch:active {
+.inputName:focus,
+.inputName:active {
     color: black;
     text-indent: 0;
     background: #fff;
     border-bottom:  2px solid rgb(174, 204, 204);
 }
 
-.inputSearch:focus + label,
-.inputSearch:active + label {
+.inputName:focus + label,
+.inputName:active + label {
     color: #fff;
     text-shadow: 0 1px 0 rgb(174, 204, 204);
     background: rgb(174, 204, 204);
     transform: translateY(-40px);
 }
   
-.inputSearch:focus + label:after,
-.inputSearch:active + label:after {
+.inputName:focus + label:after,
+.inputName:active + label:after {
     border-top: 4px solid rgb(174, 204, 204);
 }

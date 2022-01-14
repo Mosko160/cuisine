@@ -6,13 +6,19 @@
         <script src="/jquery-3.6.0.js"></script>
         <script src="/js/addIngredients.js"></script>
         <script src="/js/topBar.js"></script>
+        <link rel="stylesheet" href="/css/addIngredients.css">
     </head>
     <body>
         <div id='topBar'></div>
         <center>
-            <p>Nom : <input id='ingredientsName'/></p>
-            <button onclick='save()'>Enregistrer</button>
-            <br><br>
+            <div class='inputNameContainer'>
+                <span>
+                    <input class="inputName" id="ingredientsName" type="text"/>
+                    <label for='ingredientsName'>Nom :</label>
+                </span>
+            </div>
+            <button onclick='save()' class='btn'>Enregistrer</button>
+            <br/>
             <p>Ingrédients actuellement renseignés :</p>
             <script src="/js/searchIngredient.js"></script>
             <div id='searchIngredients'></div> 

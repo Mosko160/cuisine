@@ -24,3 +24,77 @@
     border-radius: 20px;
     text-align: center;
 }
+
+.inputSearchContainer {
+    margin: 0 auto;
+    text-align: center;
+}
+.inputSearchContainer span {
+    position: relative;
+    display: inline-block;
+    margin: 30px 10px;
+}
+ 
+.inputSearch {
+    display: inline-block;
+    width: 18em;
+    padding: 10px 0 13px 15px;
+    background-color: rgb(174, 204, 204);
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    text-indent: 5.5em;
+    transition: all 0.3s ease-in-out;
+}
+
+.inputSearch + label {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    bottom: 8px;
+    padding: 5px 15px;
+    color: #032429;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 rgba(19, 74, 70, 0);
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    background: rgba(122, 184, 147, 0);
+}
+
+.inputSearch + label:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 50%;
+    margin-left: -3px;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 3px solid rgba(122, 184, 147, 0);
+    transition: all 0.3s ease-in-out;
+}
+  
+.inputSearch:focus,
+.inputSearch:active {
+    color: black;
+    text-indent: 0;
+    background: #fff;
+    border-bottom:  2px solid rgb(174, 204, 204);
+}
+
+.inputSearch:focus + label,
+.inputSearch:active + label {
+    color: #fff;
+    text-shadow: 0 1px 0 rgb(174, 204, 204);
+    background: rgb(174, 204, 204);
+    transform: translateY(-40px);
+}
+  
+.inputSearch:focus + label:after,
+.inputSearch:active + label:after {
+    border-top: 4px solid rgb(174, 204, 204);
+}

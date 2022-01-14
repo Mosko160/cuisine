@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const qs = require('querystring');
 const sql = require('sqlite3').verbose();
 
-const host = '127.0.0.1';
+const host = '192.168.183.97';
 const port = 80;
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
@@ -92,6 +92,14 @@ const requestListener = function(req,res){
                     }
                 });
                 break;
+            case 'getRecipeName':
+                sql = `select nom from recettes where id="${data['idRecipe']}";`;
+                recettesDB.all(sql,[],(err,row)=>{
+                    log(ip,action,sql);
+                    res.setHeader('Content-Type','text/plain');
+                    res.end(row[0]['nom']);
+                });
+            break
             case 'getRecipe':
                 id = data['id'];
                 sql = `select * from recettes_instructions where id=${id};`;

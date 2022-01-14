@@ -6,8 +6,12 @@ Pour ajouter ce code il faut appeler :
 <html>
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 <link rel="stylesheet" href="/css/displayRecipe.css" />
-<input id='searchRecipeName' oninput='searchForRecipe()' class='searchInput' />
-<br /><br />
+<div class='inputSearchContainer'>
+    <span>
+        <input class="inputSearch" id="searchRecipeName" type="text" oninput="searchForRecipe()" />
+        <label for='searchRecipeName'>Recette :</label>
+    </span>
+</div>
 <select name="recipeType" id="recipeType" onchange="searchForRecipe()">
     <option value="none">Selectionner type de plat</option>
     <option value="entre">Entrée</option>

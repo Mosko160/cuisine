@@ -2,6 +2,10 @@ function getContent(){
     const urlParams = new URLSearchParams(window.location.search);
     recipeId = urlParams.get('recipe');
 
+    $.get('ajax',{action:'getRecipeName',idRecipe:recipeId},(data,status)=>{
+        document.getElementById('containerN').innerHTML = `<h1>${data}</h1><br/>`;
+    });
+
     $.get('ajax',{action:'getQuantity',id:recipeId},(data,status)=>{
         data = JSON.parse(JSON.parse(data));
         for(a=0;a!=data['liste'].length;a++){
@@ -21,7 +25,6 @@ function getContent(){
     });
 
     $.get('ajax',{action:'getTime',id:recipeId},(data,status)=>{
-        //data = JSON.parse(JSON.parse(data));
         data = data.slice(1,-1);
         data = data.split('#');
         p = document.createElement('p');
