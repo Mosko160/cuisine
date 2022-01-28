@@ -22,6 +22,8 @@ Pour ajouter ce code il faut appeler :
     <option value="boisson">Boisson</option>
 </select>
 <br/><br/>
-<div id='CONTAINERR'><div id='containerR'></div></div>
-<script>searchForRecipe();</script>
+<div id='CONTAINERR'>
+    <p v-for='item in list':key='item':value='item' class='recipeList' v-on:click='clickedRecipe(item)'>{{item}}</p>
+</div>
+<script>startVueSearchRecipe();searchForRecipe();</script>
 </html>

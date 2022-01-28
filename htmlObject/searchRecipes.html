@@ -7,7 +7,9 @@ Pour ajouter ce code il faut appeler :
 <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 <link rel="stylesheet" href="/css/searchRecipe.css" />
 <div id='containsRecipes'>
+    <p v-for='item in list':key='item':value='item' class='recipeList' v-on:click='recipeClicked(item)'>{{item}}</p>
     <div id='removableRecipes'></div>
 </div>
 <br />
+<script>startVueRecipe()</script>
 </html>

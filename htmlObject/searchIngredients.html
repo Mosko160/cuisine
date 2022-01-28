@@ -13,11 +13,10 @@ Pour ajouter ce code il faut appeler :
     </span>
 </div>
 <br />
-<p id='pre0' class='ingredientListResearch' onClick='clickPre("pre0")'></p>
-<p id='pre1' class='ingredientListResearch' onClick='clickPre("pre1")'></p>
-<p id='pre2' class='ingredientListResearch' onClick='clickPre("pre2")'></p>
-<br />
-<div id='containsIngredients'>
-    <div id='removableIngredients'></div>
+<div id='ingredientsContainer'>
+    <p v-for='item in pre' :value='item' :key='item' class='ingredientListResearch' v-on:click="clickedPre(item)">{{item}}</p>
+    <p v-for='item in picked':value='item' :key='item' class='ingredientList' v-on:click='clickedIng(item)'>{{item}}</p>
 </div>
+<br />
+<script>startVueIngredients()</script>
 </html>

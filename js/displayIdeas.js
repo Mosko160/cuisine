@@ -8,25 +8,15 @@ function getIdeas(){
     });
 }
 
+var ideasInfo = [];
+
 function displayIdeas(contentData){
     data = JSON.parse(contentData);
     ideaName = data['names'];
     ideaLink = data['links'];
-    console.log(data);
     ideaId = data['id'];
-    l = ideaLink.length;
-    container = document.createElement('div');
-    container.id = 'containerIdeas';
-    for(a=0; a != l; a++){
-        d = document.createElement('div');
-        d.innerHTML = ideaName[a];
-        d.setAttribute('onclick',`ideaClicked("${ideaId[a]}","${ideaLink[a]}")`);
-        d.setAttribute('class','ideaList');
-        d.id = ideaId[a];
-        container.appendChild(d);
-    }
-    document.getElementById('containerIdeas').remove();
-    document.getElementById('container').appendChild(container)
+    ideasDisplay.list = ideaName;
+    ideasInfo = [ideaName,ideaId,ideaLink];
 }
 
 function ideaClicked(id,url){
@@ -40,4 +30,19 @@ function ideaClicked(id,url){
 
 function addIdeas(){
     location = '/html/addIdeas.html';
+}
+
+function startVueDisplayIdeas(){
+    ideasDisplay = new Vue({
+        el : '#container',
+        data : {
+            list : []
+        },
+        methods : {
+            clickedRecipe: function(name){
+                index = ideasInfo[0].indexOf(name);
+                ideaClicked(ideasInfo[1][index],ideasInfo[2][index]);
+            }
+        }
+    });
 }

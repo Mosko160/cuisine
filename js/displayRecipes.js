@@ -2,6 +2,8 @@ $(function(){
     $("#displayRecipes").load("/htmlObject/displayRecipes.html"); 
 });
 
+var recipeInfos = [];
+
 function searchForRecipe(){
     dataI = document.getElementById('searchRecipeName').value;
     if(dataI == ''){
@@ -17,22 +19,26 @@ function searchForRecipe(){
 
 function displayRecipe(dataNonParse){
     data = JSON.parse(dataNonParse);
+    searchRecipeDisplay.list = data['name'];
     Rid = data['id'];
     Rname = data['name'];
-    l = Rid.length;
-    document.getElementById('containerR').remove();
-    d = document.createElement('div');
-    d.id = 'containerR';
-    for(a=0; a!=l; a++){
-        element = document.createElement('div');
-        element.setAttribute('class','recipeList');
-        element.innerHTML = Rname[a];
-        element.setAttribute('onclick',`recipeSelected(${Rid[a]})`);
-        d.appendChild(element);
-    }
-    document.getElementById('CONTAINERR').appendChild(d);
+    recipeInfos = [Rname,Rid]
 }
 
 function recipeSelected(id){
     location = `/html/recipe.html?recipe=${id}`;
+}
+
+function startVueSearchRecipe(){
+    searchRecipeDisplay = new Vue({
+        el : '#CONTAINERR',
+        data : {
+            list : []
+        },
+        methods : {
+            clickedRecipe: function(name){
+                recipeSelected(recipeInfos[1][recipeInfos[0].indexOf(name)]);
+            }
+        }
+    });
 }

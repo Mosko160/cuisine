@@ -10,6 +10,7 @@
     border: 3px solid;
     transition: color 0.3s;
     transition: background-color 0.3s;
+    margin-top: -0.7em;
 }
 .ingredientList:hover{
     background-color: white;
@@ -18,7 +19,6 @@
 }
 
 .ingredientListResearch{
-    display: none;
     color: rgb(255, 188, 144);
     background-color: white;
     height: 2.5em;
@@ -29,6 +29,7 @@
     border: 3px solid;
     transition: color 0.3s;
     transition: background-color 0.3s;
+    margin-top: -0.7em;
 }
 .ingredientListResearch:hover{
     background-color: rgb(255, 188, 144);
