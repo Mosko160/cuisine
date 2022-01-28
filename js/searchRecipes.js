@@ -6,7 +6,9 @@ var recipeInfo = null;
 
 function searchForRecipe(){
     $.get('ajax',{action:'rechercheRecette',value:JSON.stringify(listIngredientsId)},(data,status)=>{
-        displayRecipes(JSON.parse(data));
+        if(data != 'none'){
+            displayRecipes(JSON.parse(data));
+        }
     });
 }
 

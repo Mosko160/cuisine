@@ -9,9 +9,11 @@ autoSearch = false;
 
 function changeInputValue(reset){
     $.get('ajax',{action:'rechercheIngredient',value:document.getElementById('searchInput').value},(data,status)=>{
-        dataI = JSON.parse(data);
-        if(reset){ingredientsSelector.pre = [];}
-        else{ingredientsSelector.pre = dataI[0];}
+        if(reset || data == 'none'){ingredientsSelector.pre = [];}
+        else{
+            dataI = JSON.parse(data);
+            ingredientsSelector.pre = dataI[0];
+        }
     });
 }
 

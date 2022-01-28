@@ -43,54 +43,65 @@ const requestListener = function(req,res){
         action = data['action'];
         switch (action){
             case 'rechercheIngredient':
-                var sql = `select * from ingredients where nom like '${data['value']}%' limit 3;`;
-                var resultsName = [];
-                var resultsId = [];
-                ingredientsDB.all(sql,[],(err,rows)=>{
-                    if(err){throw err}
-                    else{
-                        rows.forEach((row)=>{
-                            resultsName.push(row.nom);
-                            resultsId.push(row.id)
-                        });
-                    }
-                    res.setHeader('Content-Type','text/plain');
-                    res.end(JSON.stringify([resultsName,resultsId]));
-                });
-                log(ip,action,sql);
+                if(data['value'] == ''){
+                    res.setHeader('Content-type','text/plain');
+                    res.end('none');
+                }else{
+                    var sql = `select * from ingredients where nom like '${data['value']}%' limit 3;`;
+                    var resultsName = [];
+                    var resultsId = [];
+                    ingredientsDB.all(sql,[],(err,rows)=>{
+                        if(err){throw err}
+                        else{
+                            rows.forEach((row)=>{
+                                resultsName.push(row.nom);
+                                resultsId.push(row.id)
+                            });
+                        }
+                        res.setHeader('Content-Type','text/plain');
+                        res.end(JSON.stringify([resultsName,resultsId]));
+                    });
+                    log(ip,action,sql);
+                }
                 break;
             case 'rechercheRecette':
-                ingredients = JSON.parse(data['value']);
-                sql = 'select count(nom) from ingredients;';
-                log(ip,action,sql);
-                ingredientsDB.all(sql,[],(err,rows)=>{
-                    if(err){throw err;}
-                    else{
-                        rows.forEach((number)=>{
-                            var sql = 'select * from recettes where (';
-                            for(a=0;a!=ingredients.length;a++){sql+= `code like '%[${ingredients[a]}]/%' or `;}
-                            sql = sql.slice(0,-3)+') and (';
-                            for(a=1;a!=number['count(nom)']+1;a++){
-                                if(ingredients.indexOf(a) == -1){
-                                    sql+=` code not like '%[${a}]/%' and`;
+                if(data['value'] != '[]'){
+                    ingredients = JSON.parse(data['value']);
+                    sql = 'select count(nom) from ingredients;';
+                    log(ip,action,sql);
+                    ingredientsDB.all(sql,[],(err,rows)=>{
+                        if(err){throw err;}
+                        else{
+                            rows.forEach((number)=>{
+                                var sql = 'select * from recettes where (';
+                                for(a=0;a!=ingredients.length;a++){sql+= `code like '%[${ingredients[a]}]/%' or `;}
+                                sql = sql.slice(0,-3)+') and (';
+                                for(a=1;a!=number['count(nom)']+1;a++){
+                                    if(ingredients.indexOf(a) == -1){
+                                        sql+=` code not like '%[${a}]/%' and`;
+                                    }
                                 }
-                            }
-                            sql = sql.slice(0,-3)+');';
-                            recettesDB.all(sql,[],(err,rows)=>{
-                                if(err){throw err;}
-                                var name=[];
-                                var id=[]
-                                rows.forEach((row)=>{
-                                    name.push(row['nom']);
-                                    id.push(row['id']);
+                                sql = sql.slice(0,-3)+');';
+                                recettesDB.all(sql,[],(err,rows)=>{
+                                    if(err){throw err;}
+                                    var name=[];
+                                    var id=[]
+                                    rows.forEach((row)=>{
+                                        name.push(row['nom']);
+                                        id.push(row['id']);
+                                    });
+                                    log(ip,action,sql);
+                                    res.setHeader('Content-Type','text/plain');
+                                    res.end(JSON.stringify([name,id]));
                                 });
-                                log(ip,action,sql);
-                                res.setHeader('Content-Type','text/plain');
-                                res.end(JSON.stringify([name,id]));
                             });
-                        });
-                    }
-                });
+                        }
+                    });
+                }else{
+                    res.setHeader('Content-Type','text/plain');
+                    res.end('none');
+                }
+
                 break;
             case 'getRecipeName':
                 sql = `select nom from recettes where id="${data['idRecipe']}";`;
