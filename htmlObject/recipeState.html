@@ -9,6 +9,15 @@ Pour ajouter ce code il faut appeler :
     <p>Nom de la recette : <input id='nom'></p>
     <p>Temps de préparation : <input id='preparationTime'></p>
     <p>Temps de cuisson : <input id='cookTime'></p>
+    <select name="recipeType" id="recipeType" onchange="getIdeas()">
+        <option value="none">Selectionner type de plat</option>
+        <option value="entre">Entrée</option>
+        <option value="plat">Plat</option>
+        <option value="dessert">Dessert</option>
+        <option value="gouter">Gouter</option>
+        <option value="gateau">Gateau</option>
+        <option value="boisson">Boisson</option>
+    </select>
 </div>
 <div id='state2' style='display: none;'>
     <p>Ingredients :</p>

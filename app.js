@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const qs = require('querystring');
 const sql = require('sqlite3').verbose();
 
-const host = '192.168.79.162';
+const host = '127.0.0.1';
 const port = 80;
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
@@ -160,11 +160,12 @@ const requestListener = function(req,res){
                 Rquantity = data['quantity[]'];           
                 Rstep = data['step[]'];
                 Rtime = data['time[]'];
+                type = data['typeRecipe'];
                 code = '';
                 for(element of RlistIngredients){
                     code += `[${element}]/`;
                 }
-                sql = `insert into recettes (nom,code) values ('${Rname}','${code}');`;
+                sql = `insert into recettes (nom,code,type) values ('${Rname}','${code}','${type}');`;
                 recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                 log(ip,action,sql);
                 sql = `select id from recettes where nom='${Rname}';`;
@@ -306,6 +307,5 @@ function log(ip,action,content){
     time = `${hours}:${minutes}:${seconds}`;
     var end = new Date() - start;
     Ldata = `${time} | (${end}ms) ${ip} - [${action}] - ${content}`;
-    //console.log(Ldata);
     fs.appendFile(fileName,Ldata+'\n',(err)=>{if(err){throw err;}});
 }

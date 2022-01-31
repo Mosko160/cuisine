@@ -15,6 +15,7 @@ function submit(){
         listNameIngredients: listIngredientsName,
         time : [document.getElementById('preparationTime').value,document.getElementById('cookTime').value],
         quantity: quantityI,
+        typeRecipe : document.getElementById('recipeType').value,
         step: stepI
     }
     $.get('ajax',request,(data,status)=>{
