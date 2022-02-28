@@ -28,3 +28,24 @@
 .stepContent{
     width: 85%;
 }
+
+.deleteButton{
+    display: block;
+    background-color: rgb(255, 103, 103);
+    color: white;
+    height: 2.5em;
+    width: 12em;
+    text-align:center;
+    padding-top: 1em;
+    border-radius: 10px;
+    border: 3px solid;
+    transition: color 0.3s;
+    transition: background-color 0.3s;
+    margin-top: -0.7em;
+}
+
+.deleteButton:hover{
+    background-color: white;
+    color: rgb(255, 103, 103);
+    border-color: rgb(255, 103, 103);
+}

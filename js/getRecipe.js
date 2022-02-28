@@ -32,3 +32,10 @@ function getContent(){
         document.getElementById('containerT').appendChild(p);
     });
 }
+
+function deleteRecipe(){
+    if(confirm('Voulez vous vraiment supprimer cette recette ?')){
+        $.get('ajax',{action:'deleteRecipe',id:recipeId},()=>{});
+        document.location.href = 'searchRecipe.html';
+    }
+}

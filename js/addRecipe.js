@@ -6,7 +6,7 @@ function submit(){
     }
     stepI = [];
     for(a = 1; a != step+1; a++){
-        stepI.push(document.getElementById('taStep'+a).value);
+        stepI.push(document.getElementById('taStep'+a).value.replaceAll("'","&#39;"));
     }
     request = {
         action: 'addRecipe',

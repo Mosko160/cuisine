@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const qs = require('querystring');
 const sql = require('sqlite3').verbose();
 
-const host = '127.0.0.1';
+const host = '192.168.1.24';
 const port = 80;
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
@@ -18,26 +18,30 @@ const requestListener = function(req,res){
     file = url.parse(req.url).pathname;
     if(file != '/html/ajax'){
         if(file == '/'){file='/html/index.html';}
-        fs.readFile(__dirname+file).then(contents =>{
-            log(ip,'getFile',__dirname+'/html'+file)
-            fileType = file.split('.')[file.split('.').length - 1];
-            switch(fileType){
-                case 'html':
-                    res.setHeader('Content-Type','text/html');
-                    break;
-                case 'css':
-                    res.setHeader('Content-Type','text/css');
-                    break;
-                case 'js':
-                    res.setHeader('Content-Type','application/javascript');
-                    break;
-                case 'png':
-                    res.setHeader('Content-Type','image/png');
-                    break;
-            }
-            res.writeHead(200);
-            res.end(contents);
-        });
+        try{
+            fs.readFile(__dirname+file).then(contents =>{
+                log(ip,'getFile',__dirname+'/html'+file)
+                fileType = file.split('.')[file.split('.').length - 1];
+                switch(fileType){
+                    case 'html':
+                        res.setHeader('Content-Type','text/html');
+                        break;
+                    case 'css':
+                        res.setHeader('Content-Type','text/css');
+                        break;
+                    case 'js':
+                        res.setHeader('Content-Type','application/javascript');
+                        break;
+                    case 'png':
+                        res.setHeader('Content-Type','image/png');
+                        break;
+                }
+                res.writeHead(200);
+                res.end(contents);
+            });
+        }catch(error){
+            console.log(`Unable find file ${file}`);
+        }
     }else{
         data = qs.parse(url.parse(req.url).query);
         action = data['action'];
@@ -174,11 +178,15 @@ const requestListener = function(req,res){
                     else{
                         id = row[0]['id'];
                         content = '{';
-                        for(a=0; a != RlistIngredientsNames.length; a++){content += `"${RlistIngredientsNames[a]}":"${Rquantity[a]}",`;}
-                        content += `"liste":[`;
-                        for(a=0; a!=RlistIngredientsNames.length; a++){content += `"${RlistIngredientsNames[a]}",`;}
-                        content = content.slice(0,-1);
-                        content += ']}';
+                        if(typeof RlistIngredientsNames != 'string'){
+                            for(a=0; a != RlistIngredientsNames.length; a++){content += `"${RlistIngredientsNames[a]}":"${Rquantity[a]}",`;}
+                            content += `"liste":[`;
+                            for(a=0; a!=RlistIngredientsNames.length; a++){content += `"${RlistIngredientsNames[a]}",`;}
+                            content = content.slice(0,-1);
+                            content += ']}';
+                        }else{
+                            content += `"${RlistIngredientsNames}":"${Rquantity}", "liste":["${RlistIngredientsNames}"]}`;
+                        }
                         sql = `insert into recettes_ingredients (id,ingredients) values ('${id}','${content}');`;
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                         log(ip,action,sql);
@@ -284,6 +292,17 @@ const requestListener = function(req,res){
                     console.log(sql);
                     res.setHeader('Content-Type','text/plain');
                     res.end('success');
+                break;
+                case 'deleteRecipe':
+                    recipeId = data['id'];
+                    sql = `delete from recettes where id="${recipeId}";`;
+                    recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    sql = `delete from recettes_ingredients where id="${recipeId}";`;
+                    recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    sql = `delete from recettes_instructions where id="${recipeId}";`;
+                    recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    sql = `delete from recettes_temps where id="${recipeId}";`;
+                    recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                 break;
         }
     }
