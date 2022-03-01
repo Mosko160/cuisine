@@ -8,7 +8,7 @@ var listIngredientsName = [];
 autoSearch = false;
 
 function changeInputValue(reset){
-    $.get('ajax',{action:'rechercheIngredient',value:document.getElementById('searchInput').value},(data,status)=>{
+    $.get('ajax',{action:'rechercheIngredient',value:document.getElementById('searchInput').value.replaceAll("'","&#39;")},(data,status)=>{
         if(reset || data == 'none'){ingredientsSelector.pre = [];}
         else{
             dataI = JSON.parse(data);
