@@ -158,6 +158,7 @@ const requestListener = function(req,res){
                 });
                 break;
             case 'addRecipe':
+                image = data['image'];
                 Rname = data['name'];
                 RlistIngredients = data['listIngredients[]'];
                 RlistIngredientsNames = data['listNameIngredients[]'];
@@ -169,7 +170,7 @@ const requestListener = function(req,res){
                 for(element of RlistIngredients){
                     code += `[${element}]/`;
                 }
-                sql = `insert into recettes (nom,code,type) values ('${Rname}','${code}','${type}');`;
+                sql = `insert into recettes (nom,code,type,image) values ('${Rname}','${code}','${type}','${image}');`;
                 recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                 log(ip,action,sql);
                 sql = `select id from recettes where nom='${Rname}';`;
@@ -304,6 +305,15 @@ const requestListener = function(req,res){
                     sql = `delete from recettes_temps where id="${recipeId}";`;
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                 break;
+                case 'getImage':
+                    recipeId = data['idRecipe'];
+                    sql = `select image from recettes where id='${recipeId}'`;
+                    recettesDB.all(sql,[],(err,row)=>{
+                        if(err){throw err}
+                        res.setHeader('Content-Type','text/plain');
+                        res.end(row[0]['image']);
+                    });
+                break; 
         }
     }
     

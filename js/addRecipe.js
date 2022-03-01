@@ -8,17 +8,25 @@ function submit(){
     for(a = 1; a != step+1; a++){
         stepI.push(document.getElementById('taStep'+a).value.replaceAll("'","&#39;"));
     }
-    request = {
-        action: 'addRecipe',
-        name: name,
-        listIngredients: listIngredientsId,
-        listNameIngredients: listIngredientsName,
-        time : [document.getElementById('preparationTime').value,document.getElementById('cookTime').value.replaceAll("'","&#39;")],
-        quantity: quantityI,
-        typeRecipe : document.getElementById('recipeType').value.replaceAll("'","&#39;"),
-        step: stepI
-    }
-    $.get('ajax',request,(data,status)=>{
-        document.location.href = '/';
-    });
+    file = document.getElementById('imageInput').files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    var request;
+    reader.onload = function () {
+        request = {
+            action: 'addRecipe',
+            name: name,
+            listIngredients: listIngredientsId,
+            listNameIngredients: listIngredientsName,
+            time : [document.getElementById('preparationTime').value,document.getElementById('cookTime').value.replaceAll("'","&#39;")],
+            quantity: quantityI,
+            typeRecipe : document.getElementById('recipeType').value.replaceAll("'","&#39;"),
+            step: stepI,
+            image: reader.result
+        }
+        $.get('ajax',request,(data,status)=>{
+            document.location.href = '/';
+        });
+    };
+    
 }

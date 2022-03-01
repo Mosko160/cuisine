@@ -2,6 +2,10 @@ function getContent(){
     const urlParams = new URLSearchParams(window.location.search);
     recipeId = urlParams.get('recipe');
 
+    $.get('ajax',{action:'getImage', idRecipe:recipeId},(data,status)=>{
+        document.getElementById('imageRecipe').src = data;   
+    });
+
     $.get('ajax',{action:'getRecipeName',idRecipe:recipeId},(data,status)=>{
         document.getElementById('containerN').innerHTML = `<h1>${data}</h1><br/>`;
     });

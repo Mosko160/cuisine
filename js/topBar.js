@@ -25,3 +25,4 @@ function ideaC(){
 function setLeft(){
     document.getElementById('ideaIcon').style.left='calc(5% + 2em)'
 }
+
