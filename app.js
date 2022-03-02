@@ -297,23 +297,41 @@ const requestListener = function(req,res){
                 case 'deleteRecipe':
                     recipeId = data['id'];
                     sql = `delete from recettes where id="${recipeId}";`;
+                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                     sql = `delete from recettes_ingredients where id="${recipeId}";`;
+                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                     sql = `delete from recettes_instructions where id="${recipeId}";`;
+                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                     sql = `delete from recettes_temps where id="${recipeId}";`;
+                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
                 break;
-                case 'getImage':
+                case 'getRecipeImage':
                     recipeId = data['idRecipe'];
                     sql = `select image from recettes where id='${recipeId}'`;
+                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err,row)=>{
                         if(err){throw err}
                         res.setHeader('Content-Type','text/plain');
                         res.end(row[0]['image']);
                     });
                 break; 
+                case 'deleteIngredients':
+                    ingredientsId = JSON.parse(data['ingredientsId']);
+                    sql = 'delete from ingredients where ';
+                    for(a=0; a != ingredientsId.length;a++){sql += ` id='${ingredientsId[a]}' or`;}
+                    sql = sql.slice(0,-3)+';';
+                    log(ip,action,sql);
+                    ingredientsDB.all(sql,[],(err,row)=>{
+                        if(err){throw err}
+                        res.setHeader('Content-Type','text/plain');
+                        res.end('success');
+                    });
+                break;
+
         }
     }
     

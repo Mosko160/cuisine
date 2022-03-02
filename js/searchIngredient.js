@@ -57,3 +57,11 @@ function startVueIngredients(){
         }
     });
 }
+
+function deleteIngredients(){
+    if(listIngredientsId > 0 && confirm(`Voulez vous supprimer les ingrédients seléctionnés ?`) && confirm('Cette action ne peut pas être inversée')){
+        $.get('ajax',{action:'deleteIngredients',ingredientsId:JSON.stringify(listIngredientsId)},(data,status)=>{
+            location.reload();
+        });
+    }
+}
