@@ -10,6 +10,7 @@ const port = 80;
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
 const ingredientsDB = new sql.Database(__dirname+'/database/ingredients.sqlite');
 const ideasDB = new sql.Database(__dirname+'/database/ideas.sqlite');
+const logDB = new sql.Database(__dirname+'/database/log.sqlite');
 var start;
 
 const requestListener = function(req,res){
@@ -20,7 +21,6 @@ const requestListener = function(req,res){
         if(file == '/'){file='/html/index.html';}
         try{
             fs.readFile(__dirname+file).then(contents =>{
-                log(ip,'getFile',__dirname+'/html'+file)
                 fileType = file.split('.')[file.split('.').length - 1];
                 switch(fileType){
                     case 'html':
@@ -38,6 +38,7 @@ const requestListener = function(req,res){
                 }
                 res.writeHead(200);
                 res.end(contents);
+                log(ip,'getFile',__dirname+'/html'+file,'file');
             });
         }catch(error){
             console.log(`Unable find file ${file}`);
@@ -64,18 +65,18 @@ const requestListener = function(req,res){
                         }
                         res.setHeader('Content-Type','text/plain');
                         res.end(JSON.stringify([resultsName,resultsId]));
+                        log(ip,action,sql,JSON.stringify([resultsName,resultsId]));
                     });
-                    log(ip,action,sql);
                 }
                 break;
             case 'rechercheRecette':
                 if(data['value'] != '[]'){
                     ingredients = JSON.parse(data['value']);
                     sql = 'select count(nom) from ingredients;';
-                    log(ip,action,sql);
                     ingredientsDB.all(sql,[],(err,rows)=>{
                         if(err){throw err;}
                         else{
+                            log(ip,action,sql,JSON.stringify(rows));
                             rows.forEach((number)=>{
                                 var sql = 'select * from recettes where (';
                                 for(a=0;a!=ingredients.length;a++){sql+= `code like '%[${ingredients[a]}]/%' or `;}
@@ -94,9 +95,9 @@ const requestListener = function(req,res){
                                         name.push(row['nom']);
                                         id.push(row['id']);
                                     });
-                                    log(ip,action,sql);
                                     res.setHeader('Content-Type','text/plain');
                                     res.end(JSON.stringify([name,id]));
+                                    log(ip,action,sql,JSON.stringify([name,id]));
                                 });
                             });
                         }
@@ -105,14 +106,13 @@ const requestListener = function(req,res){
                     res.setHeader('Content-Type','text/plain');
                     res.end('none');
                 }
-
                 break;
             case 'getRecipeName':
                 sql = `select nom from recettes where id="${data['idRecipe']}";`;
                 recettesDB.all(sql,[],(err,row)=>{
-                    log(ip,action,sql);
                     res.setHeader('Content-Type','text/plain');
                     res.end(row[0]['nom']);
+                    log(ip,action,sql,row[0]['nom']);
                 });
             break
             case 'getRecipe':
@@ -122,9 +122,9 @@ const requestListener = function(req,res){
                     if(err){throw err;}
                     else{
                         rows.forEach((row)=>{
-                            log(ip,action,sql);
                             res.setHeader('Content-Type','text/plain');
                             res.end(JSON.stringify(row['instructions']));
+                            log(ip,action,sql,JSON.stringify(row['instructions']));
                         });
                     }
                 });
@@ -136,9 +136,9 @@ const requestListener = function(req,res){
                     if(err){throw err;}
                     else{
                         rows.forEach((row)=>{
-                            log(ip,action,sql);
                             res.setHeader('Content-Type','text/plain');
                             res.end(JSON.stringify(row['ingredients']));
+                            log(ip,action,sql,JSON.stringify(row['ingredients']));
                         });
                     }
                 });
@@ -150,9 +150,10 @@ const requestListener = function(req,res){
                     if(err){throw err;}
                     else{
                         rows.forEach((row)=>{
-                            log(ip,action,sql);
                             res.setHeader('Content-Type','text/plain');
-                            res.end(JSON.stringify(`${row['temps_preparation']}#${row['temps_cuisson']}`));
+                            result = JSON.stringify(`${row['temps_preparation']}#${row['temps_cuisson']}`)
+                            res.end(result);
+                            log(ip,action,sql,result);
                         });
                     }
                 });
@@ -172,11 +173,11 @@ const requestListener = function(req,res){
                 }
                 sql = `insert into recettes (nom,code,type,image) values ('${Rname}','${code}','${type}','${image}');`;
                 recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                log(ip,action,sql);
                 sql = `select id from recettes where nom='${Rname}';`;
                 recettesDB.all(sql,[],(err,row)=>{
                     if(err){throw err}
                     else{
+                        log(ip,action,sql,JSON.stringify(row));
                         id = row[0]['id'];
                         content = '{';
                         if(typeof RlistIngredientsNames != 'string'){
@@ -190,19 +191,19 @@ const requestListener = function(req,res){
                         }
                         sql = `insert into recettes_ingredients (id,ingredients) values ('${id}','${content}');`;
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                        log(ip,action,sql);
+                        log(ip,action,sql,'success');
                         content = '{';
                         for(a=0;a!=Rstep.length;a++){content += `"${a+1}":"${Rstep[a]}",`;}
                         content += `"etapes":${Rstep.length}}`;
                         sql = `insert into recettes_instructions (id,instructions) values ('${id}','${content}');`;
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                        log(ip,action,sql);
+                        log(ip,action,sql,'success');
                         sql = `insert into recettes_temps (id,temps_preparation,temps_cuisson) values ("${id}","${Rtime[0]}","${Rtime[1]}");`;
                         recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                        log(ip,action,sql);
+                        log(ip,action,sql,'success');
                     }
                 });
-                log(ip,action,sql);
+                log(ip,action,sql,'success');
                 res.setHeader('Content-Type','text/plain');
                 res.end('success');
                 break;
@@ -210,7 +211,7 @@ const requestListener = function(req,res){
                 Iname = data['value'];
                 sql = `insert into ingredients (nom) values ('${Iname}');`;
                 ingredientsDB.all(sql,[],(err)=>{if(err){throw err;}});
-                log(ip,action,sql);
+                log(ip,action,sql,'success');
                 res.setHeader('Content-Type','text/plain');
                 res.end('success');
                 break;
@@ -229,9 +230,9 @@ const requestListener = function(req,res){
                                 names+= `"${element['nom']}",`;
                             });
                             data = `{"id":[${id.slice(0,-1)}],"name":[${names.slice(0,-1)}]}`;
-                            log(ip,action,sql);
                             res.setHeader('Content-Type','text/plain');
                             res.end(data);
+                            log(ip,action,sql,data);
                         }
                     });
                 }else{
@@ -248,9 +249,9 @@ const requestListener = function(req,res){
                                 names+= `"${element['nom']}",`;
                             });
                             data = `{"id":[${id.slice(0,-1)}],"name":[${names.slice(0,-1)}]}`;
-                            log(ip,action,sql);
                             res.setHeader('Content-Type','text/plain');
                             res.end(data);
+                            log(ip,action,sql,data);
                         }
                     });
                 }
@@ -272,9 +273,9 @@ const requestListener = function(req,res){
                                 ideaId += `"${element['id']}",`;
                             });
                             requestS = `{"names" : [${ideaName.slice(0,-1)}],"links":[${ideaLink.slice(0,-1)}], "id":[${ideaId.slice(0,-1)}]}`;
-                            log(ip,action,sql);
                             res.setHeader('Content-Type','text/plain');
                             res.end(requestS);
+                            log(ip,action,sql,requestS);
                         }
                     });
                 break;
@@ -282,41 +283,40 @@ const requestListener = function(req,res){
                     id = data['id'];
                     sql = `delete from liste where id="${id}";`;
                     ideasDB.all(sql,[],(err)=>{if(err){throw err;}});
-                    log(ip,action,sql);
+                    log(ip,action,sql,'success');
                     res.setHeader('Content-Type','text/plain');
                     res.end('success');
                 break;
                 case 'addIdea':
                     sql = `insert into liste (name,link,type) values ("${data['ideaName']}","${data['ideaLink']}","${data['type']}")`;
                     ideasDB.all(sql,[],(err)=>{if(err){throw err;}});
-                    log(ip,action,sql);
-                    console.log(sql);
+                    log(ip,action,sql,'success');
                     res.setHeader('Content-Type','text/plain');
                     res.end('success');
                 break;
                 case 'deleteRecipe':
                     recipeId = data['id'];
                     sql = `delete from recettes where id="${recipeId}";`;
-                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    log(ip,action,sql,'success');
                     sql = `delete from recettes_ingredients where id="${recipeId}";`;
-                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    log(ip,action,sql,'success');
                     sql = `delete from recettes_instructions where id="${recipeId}";`;
-                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    log(ip,action,sql,'success');
                     sql = `delete from recettes_temps where id="${recipeId}";`;
-                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                    log(ip,action,sql,'success');
                 break;
                 case 'getRecipeImage':
                     recipeId = data['idRecipe'];
                     sql = `select image from recettes where id='${recipeId}'`;
-                    log(ip,action,sql);
                     recettesDB.all(sql,[],(err,row)=>{
                         if(err){throw err}
                         res.setHeader('Content-Type','text/plain');
                         res.end(row[0]['image']);
+                        log(ip,action,sql,row[0]['image']);
                     });
                 break; 
                 case 'deleteIngredients':
@@ -324,11 +324,11 @@ const requestListener = function(req,res){
                     sql = 'delete from ingredients where ';
                     for(a=0; a != ingredientsId.length;a++){sql += ` id='${ingredientsId[a]}' or`;}
                     sql = sql.slice(0,-3)+';';
-                    log(ip,action,sql);
                     ingredientsDB.all(sql,[],(err,row)=>{
                         if(err){throw err}
                         res.setHeader('Content-Type','text/plain');
                         res.end('success');
+                        log(ip,action,sql,'success');
                     });
                 break;
 
@@ -342,17 +342,15 @@ server.listen(port,host,()=>{
     console.log(`Server is running on ${host}:${port}`)
 });
 
-function log(ip,action,content){
+function log(ip,action,content,result){
     let date_ob = new Date();
-    let date = ("0" + date_ob.getDate()).slice(-2);
     let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
     let year = date_ob.getFullYear();
     let hours = date_ob.getHours();
     let minutes = date_ob.getMinutes();
     let seconds = date_ob.getSeconds();
-    fileName = `logs/${date}-${month}-${year}.txt`;
-    time = `${hours}:${minutes}:${seconds}`;
+    var time = `${hours}:${minutes}:${seconds}`;
     var end = new Date() - start;
-    Ldata = `${time} | (${end}ms) ${ip} - [${action}] - ${content}`;
-    fs.appendFile(fileName,Ldata+'\n',(err)=>{if(err){throw err;}});
+    var sql  = `insert into log (date,ip,term,action,sql,result) values ("${time}-${month}-${year}","${ip}","${end}","${action}","${content.replaceAll('"',"'")}","${result.replaceAll('"',"'")}");`;
+    logDB.all(sql,[],(err)=>{if(err){throw err;}});
 }
