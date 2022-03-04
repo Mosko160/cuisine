@@ -19,11 +19,10 @@ Pour ajouter ce code il faut appeler :
         <br /><br />
         <div id='container'>
             <p v-for='item in list':key='item':value='item' class='ideaList' v-on:click='clickedRecipe(item)'>{{item}}</p>
-            <div id='containerIdeas'></div>
         </div>
         <br/>
-        <input type="checkbox" id='deleteButton'>Supprimer</button><br/>
-        <button onclick='addIdeas()' class='btn'>Ajouter</button>
+        <input type="checkbox" id='deleteButton'>Supprimer</button><br/><br><br>
+        <div onclick='addIdeas()' class='btn'>Ajouter</div>
     </center>
     <script>startVueDisplayIdeas();getIdeas();</script>
 </html>

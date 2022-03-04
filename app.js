@@ -4,8 +4,16 @@ const fs = require('fs').promises;
 const qs = require('querystring');
 const sql = require('sqlite3').verbose();
 
-const host = '192.168.1.24';
-const port = 80;
+const host = process.argv[2];
+const port = process.argv[3];
+
+const RED = '\033[0;31m';
+const WHITE = '\033[0m'
+
+if(host == null || port == null){
+    console.log(`${RED}Please execute : sudo node --max-http-header-size=1000000 app.js host port`);
+    process.exit();
+}
 
 const recettesDB = new sql.Database(__dirname+'/database/recettes.sqlite');
 const ingredientsDB = new sql.Database(__dirname+'/database/ingredients.sqlite');
@@ -19,30 +27,31 @@ const requestListener = function(req,res){
     file = url.parse(req.url).pathname;
     if(file != '/html/ajax'){
         if(file == '/'){file='/html/index.html';}
-        try{
-            fs.readFile(__dirname+file).then(contents =>{
-                fileType = file.split('.')[file.split('.').length - 1];
-                switch(fileType){
-                    case 'html':
-                        res.setHeader('Content-Type','text/html');
-                        break;
-                    case 'css':
-                        res.setHeader('Content-Type','text/css');
-                        break;
-                    case 'js':
-                        res.setHeader('Content-Type','application/javascript');
-                        break;
-                    case 'png':
-                        res.setHeader('Content-Type','image/png');
-                        break;
-                }
-                res.writeHead(200);
-                res.end(contents);
-                log(ip,'getFile',__dirname+'/html'+file,'file');
-            });
-        }catch(error){
-            console.log(`Unable find file ${file}`);
-        }
+        fs.readFile(__dirname+file).then(contents =>{
+            fileType = file.split('.')[file.split('.').length - 1];
+            switch(fileType){
+                case 'html':
+                    res.setHeader('Content-Type','text/html');
+                    break;
+                case 'css':
+                    res.setHeader('Content-Type','text/css');
+                    break;
+                case 'js':
+                    res.setHeader('Content-Type','application/javascript');
+                    break;
+                case 'png':
+                    res.setHeader('Content-Type','image/png');
+                    break;
+            }
+            res.writeHead(200);
+            res.end(contents);
+            log(ip,'getFile',__dirname+'/html'+file,'file',false);
+        }).catch(err =>{
+            log(ip,'getFile',__dirname+'/html'+file,'ERROR',true);
+            res.writeHead(404, {"Content-Type": "text/plain"});
+            res.write("404 Not Found\n");
+            res.end()
+        });
     }else{
         data = qs.parse(url.parse(req.url).query);
         action = data['action'];
@@ -56,7 +65,7 @@ const requestListener = function(req,res){
                     var resultsName = [];
                     var resultsId = [];
                     ingredientsDB.all(sql,[],(err,rows)=>{
-                        if(err){throw err}
+                        if(err){log(ip,action,sql,err.toString(),true)}
                         else{
                             rows.forEach((row)=>{
                                 resultsName.push(row.nom);
@@ -65,7 +74,7 @@ const requestListener = function(req,res){
                         }
                         res.setHeader('Content-Type','text/plain');
                         res.end(JSON.stringify([resultsName,resultsId]));
-                        log(ip,action,sql,JSON.stringify([resultsName,resultsId]));
+                        log(ip,action,sql,JSON.stringify([resultsName,resultsId]),false);
                     });
                 }
                 break;
@@ -74,7 +83,7 @@ const requestListener = function(req,res){
                     ingredients = JSON.parse(data['value']);
                     sql = 'select count(nom) from ingredients;';
                     ingredientsDB.all(sql,[],(err,rows)=>{
-                        if(err){throw err;}
+                        if(err){log(ip,action,sql,err.toString(),true);}
                         else{
                             log(ip,action,sql,JSON.stringify(rows));
                             rows.forEach((number)=>{
@@ -88,7 +97,7 @@ const requestListener = function(req,res){
                                 }
                                 sql = sql.slice(0,-3)+');';
                                 recettesDB.all(sql,[],(err,rows)=>{
-                                    if(err){throw err;}
+                                    if(err){log(ip,action,sql,err.toString(),true);}
                                     var name=[];
                                     var id=[]
                                     rows.forEach((row)=>{
@@ -97,7 +106,7 @@ const requestListener = function(req,res){
                                     });
                                     res.setHeader('Content-Type','text/plain');
                                     res.end(JSON.stringify([name,id]));
-                                    log(ip,action,sql,JSON.stringify([name,id]));
+                                    log(ip,action,sql,JSON.stringify([name,id]),false);
                                 });
                             });
                         }
@@ -112,19 +121,19 @@ const requestListener = function(req,res){
                 recettesDB.all(sql,[],(err,row)=>{
                     res.setHeader('Content-Type','text/plain');
                     res.end(row[0]['nom']);
-                    log(ip,action,sql,row[0]['nom']);
+                    log(ip,action,sql,row[0]['nom'],false);
                 });
             break
             case 'getRecipe':
                 id = data['id'];
                 sql = `select * from recettes_instructions where id=${id};`;
                 recettesDB.all(sql,[],(err,rows)=>{
-                    if(err){throw err;}
+                    if(err){log(ip,action,sql,err.toString(),true);}
                     else{
                         rows.forEach((row)=>{
                             res.setHeader('Content-Type','text/plain');
                             res.end(JSON.stringify(row['instructions']));
-                            log(ip,action,sql,JSON.stringify(row['instructions']));
+                            log(ip,action,sql,JSON.stringify(row['instructions']),false);
                         });
                     }
                 });
@@ -133,12 +142,12 @@ const requestListener = function(req,res){
                 id = data['id'];
                 sql = `select * from recettes_ingredients where id=${id};`;
                 recettesDB.all(sql,[],(err,rows)=>{
-                    if(err){throw err;}
+                    if(err){log(ip,action,sql,err.toString(),true);}
                     else{
                         rows.forEach((row)=>{
                             res.setHeader('Content-Type','text/plain');
                             res.end(JSON.stringify(row['ingredients']));
-                            log(ip,action,sql,JSON.stringify(row['ingredients']));
+                            log(ip,action,sql,JSON.stringify(row['ingredients']),false);
                         });
                     }
                 });
@@ -147,13 +156,13 @@ const requestListener = function(req,res){
                 id = data['id'];
                 sql = `select * from recettes_temps where id=${id};`;
                 recettesDB.all(sql,[],(err,rows)=>{
-                    if(err){throw err;}
+                    if(err){log(ip,action,sql,err.toString(),true);}
                     else{
                         rows.forEach((row)=>{
                             res.setHeader('Content-Type','text/plain');
                             result = JSON.stringify(`${row['temps_preparation']}#${row['temps_cuisson']}`)
                             res.end(result);
-                            log(ip,action,sql,result);
+                            log(ip,action,sql,result,false);
                         });
                     }
                 });
@@ -172,12 +181,12 @@ const requestListener = function(req,res){
                     code += `[${element}]/`;
                 }
                 sql = `insert into recettes (nom,code,type,image) values ('${Rname}','${code}','${type}','${image}');`;
-                recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
+                recettesDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
                 sql = `select id from recettes where nom='${Rname}';`;
                 recettesDB.all(sql,[],(err,row)=>{
-                    if(err){throw err}
+                    if(err){log(ip,action,sql,err.toString(),true)}
                     else{
-                        log(ip,action,sql,JSON.stringify(row));
+                        log(ip,action,sql,JSON.stringify(row),false);
                         id = row[0]['id'];
                         content = '{';
                         if(typeof RlistIngredientsNames != 'string'){
@@ -190,28 +199,28 @@ const requestListener = function(req,res){
                             content += `"${RlistIngredientsNames}":"${Rquantity}", "liste":["${RlistIngredientsNames}"]}`;
                         }
                         sql = `insert into recettes_ingredients (id,ingredients) values ('${id}','${content}');`;
-                        recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                        log(ip,action,sql,'success');
+                        recettesDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                        log(ip,action,sql,'success',false);
                         content = '{';
                         for(a=0;a!=Rstep.length;a++){content += `"${a+1}":"${Rstep[a]}",`;}
                         content += `"etapes":${Rstep.length}}`;
                         sql = `insert into recettes_instructions (id,instructions) values ('${id}','${content}');`;
-                        recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                        log(ip,action,sql,'success');
+                        recettesDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                        log(ip,action,sql,'success',false);
                         sql = `insert into recettes_temps (id,temps_preparation,temps_cuisson) values ("${id}","${Rtime[0]}","${Rtime[1]}");`;
-                        recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                        log(ip,action,sql,'success');
+                        recettesDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                        log(ip,action,sql,'success',false);
                     }
                 });
-                log(ip,action,sql,'success');
+                log(ip,action,sql,'success',false);
                 res.setHeader('Content-Type','text/plain');
                 res.end('success');
                 break;
             case 'addIngredients':
                 Iname = data['value'];
                 sql = `insert into ingredients (nom) values ('${Iname}');`;
-                ingredientsDB.all(sql,[],(err)=>{if(err){throw err;}});
-                log(ip,action,sql,'success');
+                ingredientsDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                log(ip,action,sql,'success',false);
                 res.setHeader('Content-Type','text/plain');
                 res.end('success');
                 break;
@@ -223,7 +232,7 @@ const requestListener = function(req,res){
                     id = '';
                     names = '';
                     recettesDB.all(sql,[],(err,rows)=>{
-                        if(err){throw err;}
+                        if(err){log(ip,action,sql,err.toString(),true);}
                         else{
                             rows.forEach(element =>{
                                 id+= `"${element['id']}",`;
@@ -232,7 +241,7 @@ const requestListener = function(req,res){
                             data = `{"id":[${id.slice(0,-1)}],"name":[${names.slice(0,-1)}]}`;
                             res.setHeader('Content-Type','text/plain');
                             res.end(data);
-                            log(ip,action,sql,data);
+                            log(ip,action,sql,data,false);
                         }
                     });
                 }else{
@@ -242,7 +251,7 @@ const requestListener = function(req,res){
                     id = '';
                     names = '';
                     recettesDB.all(sql,[],(err,rows)=>{
-                        if(err){throw err;}
+                        if(err){log(ip,action,sql,err.toString(),true)}
                         else{
                             rows.forEach(element =>{
                                 id+= `"${element['id']}",`;
@@ -251,7 +260,7 @@ const requestListener = function(req,res){
                             data = `{"id":[${id.slice(0,-1)}],"name":[${names.slice(0,-1)}]}`;
                             res.setHeader('Content-Type','text/plain');
                             res.end(data);
-                            log(ip,action,sql,data);
+                            log(ip,action,sql,data,false);
                         }
                     });
                 }
@@ -262,7 +271,7 @@ const requestListener = function(req,res){
                     if(recipeType == 'none'){sql = 'select id,name,link from liste;'}
                     else{sql = `select id,name,link from liste where type="${recipeType}";`}
                     ideasDB.all(sql,[],(err,rows)=>{
-                        if(err){throw err;}
+                        if(err){log(ip,action,sql,err.toString(),true);}
                         else{
                             ideaName = '';
                             ideaLink = '';
@@ -275,48 +284,48 @@ const requestListener = function(req,res){
                             requestS = `{"names" : [${ideaName.slice(0,-1)}],"links":[${ideaLink.slice(0,-1)}], "id":[${ideaId.slice(0,-1)}]}`;
                             res.setHeader('Content-Type','text/plain');
                             res.end(requestS);
-                            log(ip,action,sql,requestS);
+                            log(ip,action,sql,requestS,false);
                         }
                     });
                 break;
                 case 'deleteIdeas':
                     id = data['id'];
                     sql = `delete from liste where id="${id}";`;
-                    ideasDB.all(sql,[],(err)=>{if(err){throw err;}});
-                    log(ip,action,sql,'success');
+                    ideasDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                    log(ip,action,sql,'success',false);
                     res.setHeader('Content-Type','text/plain');
                     res.end('success');
                 break;
                 case 'addIdea':
                     sql = `insert into liste (name,link,type) values ("${data['ideaName']}","${data['ideaLink']}","${data['type']}")`;
-                    ideasDB.all(sql,[],(err)=>{if(err){throw err;}});
-                    log(ip,action,sql,'success');
+                    ideasDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                    log(ip,action,sql,'success',false);
                     res.setHeader('Content-Type','text/plain');
                     res.end('success');
                 break;
                 case 'deleteRecipe':
                     recipeId = data['id'];
                     sql = `delete from recettes where id="${recipeId}";`;
-                    recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                    log(ip,action,sql,'success');
+                    recettesDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                    log(ip,action,sql,'success',false);
                     sql = `delete from recettes_ingredients where id="${recipeId}";`;
-                    recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                    log(ip,action,sql,'success');
+                    recettesDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                    log(ip,action,sql,'success',false);
                     sql = `delete from recettes_instructions where id="${recipeId}";`;
-                    recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                    log(ip,action,sql,'success');
+                    recettesDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                    log(ip,action,sql,'success',false);
                     sql = `delete from recettes_temps where id="${recipeId}";`;
-                    recettesDB.all(sql,[],(err)=>{if(err){throw err;}});
-                    log(ip,action,sql,'success');
+                    recettesDB.all(sql,[],(err)=>{if(err){log(ip,action,sql,err.toString(),true);}});
+                    log(ip,action,sql,'success',false);
                 break;
                 case 'getRecipeImage':
                     recipeId = data['idRecipe'];
                     sql = `select image from recettes where id='${recipeId}'`;
                     recettesDB.all(sql,[],(err,row)=>{
-                        if(err){throw err}
+                        if(err){log(ip,action,sql,err.toString(),true)}
                         res.setHeader('Content-Type','text/plain');
                         res.end(row[0]['image']);
-                        log(ip,action,sql,row[0]['image']);
+                        log(ip,action,sql,row[0]['image'],false);
                     });
                 break; 
                 case 'deleteIngredients':
@@ -325,24 +334,22 @@ const requestListener = function(req,res){
                     for(a=0; a != ingredientsId.length;a++){sql += ` id='${ingredientsId[a]}' or`;}
                     sql = sql.slice(0,-3)+';';
                     ingredientsDB.all(sql,[],(err,row)=>{
-                        if(err){throw err}
+                        if(err){log(ip,action,sql,err.toString(),true)}
                         res.setHeader('Content-Type','text/plain');
                         res.end('success');
-                        log(ip,action,sql,'success');
+                        log(ip,action,sql,'success',false);
                     });
                 break;
-
         }
     }
-    
 }
 
 const server = http.createServer(requestListener);
 server.listen(port,host,()=>{
-    console.log(`Server is running on ${host}:${port}`)
+    console.log(`Server is running on ${host}:${port}`);
 });
 
-function log(ip,action,content,result){
+function log(ip,action,content,result,err){
     let date_ob = new Date();
     let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
     let year = date_ob.getFullYear();
@@ -351,6 +358,10 @@ function log(ip,action,content,result){
     let seconds = date_ob.getSeconds();
     var time = `${hours}:${minutes}:${seconds}`;
     var end = new Date() - start;
-    var sql  = `insert into log (date,ip,term,action,sql,result) values ("${time}-${month}-${year}","${ip}","${end}","${action}","${content.replaceAll('"',"'")}","${result.replaceAll('"',"'")}");`;
-    logDB.all(sql,[],(err)=>{if(err){throw err;}});
+    var sql  = `insert into log (date,ip,term,action,sql,result,error) values ("${time}-${month}-${year}","${ip}","${end}","${action}","${content.replaceAll('"',"'")}","${result.replaceAll('"',"'")}","${err}");`;
+    logDB.all(sql,[],(err)=>{throw err;});
+    time = `${hours}:${minutes}:${seconds}`;
+    Ldata = `${time} | (${end}ms) ${ip} - [${action}] - ${content}`;
+    if(err){Ldata = RED +"/!\\ " +Ldata+WHITE;}
+    console.log(Ldata)
 }

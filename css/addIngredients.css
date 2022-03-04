@@ -22,6 +22,7 @@
 .inputNameContainer {
     margin: 0 auto;
     text-align: center;
+    margin-left: 2.5em;
 }
 .inputNameContainer span {
     position: relative;
@@ -92,3 +93,18 @@
 .inputName:active + label:after {
     border-top: 4px solid rgb(174, 204, 204);
 }
+
+@keyframes slidein {
+    0% {opacity:0%;}
+    33% {opacity: 100%;}
+    66% {opacity: 100%;}
+    100%{opacity: 0%;}
+}
+
+.checkImage{
+    opacity: 0%;
+    height: 1.5em;
+    margin-left: 1em;
+    vertical-align: middle;
+}
+

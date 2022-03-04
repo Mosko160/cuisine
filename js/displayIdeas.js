@@ -21,8 +21,12 @@ function displayIdeas(contentData){
 
 function ideaClicked(id,url){
     if(document.getElementById('deleteButton').checked){
-        $.get('ajax',{action:'deleteIdeas',id:id},(data,status)=>{});
-        getIdeas();
+        if(confirm('Voulez vous vraiment supprimer cette idée ?')){
+            $.get('ajax',{action:'deleteIdeas',id:id},(data,status)=>{});
+            getIdeas();
+        }else{
+            document.getElementById('deleteButton').checked = false;
+        }
     }else{
         window.open(url,"_blank");
     }
