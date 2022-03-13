@@ -5,7 +5,7 @@ $(function(){
 var recipeInfos = [];
 
 function searchForRecipe(){
-    dataI = document.getElementById('searchRecipeName').value;
+    dataI = document.getElementById('searchRecipeName').value.replaceAll("'","&#39;");
     if(dataI == ''){
         $.get('ajax',{action:'searchRecipeByName',type:'random',recipeType:document.getElementById('recipeType').value},(data,status)=>{
             displayRecipe(data);

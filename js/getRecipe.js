@@ -7,16 +7,12 @@ function getContent(){
     });
 
     $.get('ajax',{action:'getRecipeName',idRecipe:recipeId},(data,status)=>{
-        document.getElementById('containerN').innerHTML = `<h1>${data}</h1><br/>`;
+        recipeDisplay.nom = data;
     });
 
     $.get('ajax',{action:'getQuantity',id:recipeId},(data,status)=>{
         data = JSON.parse(JSON.parse(data));
-        for(a=0;a!=data['liste'].length;a++){
-            p = document.createElement('p');
-            p.innerHTML = data['liste'][a]+' : '+data[data['liste'][a]]
-            document.getElementById('containerQt').appendChild(p);
-        }
+        for(a=0;a!=data['liste'].length;a++){recipeDisplay.listIngredients.push(data['liste'][a]+' : '+data[data['liste'][a]]);}
     });
 
     $.get('ajax',{action:'getRecipe',id:recipeId},(data,status)=>{
@@ -42,4 +38,17 @@ function deleteRecipe(){
         $.get('ajax',{action:'deleteRecipe',id:recipeId},()=>{});
         document.location.href = 'searchRecipe.html';
     }
+}
+
+function startVueDisplayRecipes(){
+    recipeDisplay = new Vue({
+        el : '#recipeContainer',
+        data : {
+            listIngredients : [],
+            nom: ''
+        },
+        methods : {
+            
+        }
+    });
 }

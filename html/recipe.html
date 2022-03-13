@@ -4,16 +4,17 @@
         <meta name="viewport" content="width=device-width">
         <style>body { margin: 0; padding: 0; }</style>
         <script src="/jquery-3.6.0.js"></script>
+        <script src="/vue.js"></script>
         <script src="/js/getRecipe.js"></script>
         <link rel="stylesheet" href="/css/getRecipe.css">
         <script src="/js/topBar.js"></script>
     </head>
-    <body onload="getContent()">
+    <body onload="startVueDisplayRecipes();getContent()">
         <div id='topBar'></div>
-        <center>
-            <div id='containerN'></div>
+        <center id='recipeContainer'>
+            <h1>{{nom}}</h1>
             <image id='imageRecipe' style='height:100px;width:100px;'/>
-            <div id='containerQt' class='containerQt'></div>
+            <div class='containerQt'><p v-for='item in listIngredients':key='item':value='item' class='ideaList'>{{item}}</p></div>
             <div id='containerT' class='containerT'></div>
             <div id='container' class='container'></div>
             <div class='deleteButton' onclick="deleteRecipe()">Supprimer</div><br><br><br><br>

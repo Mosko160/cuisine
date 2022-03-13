@@ -8,7 +8,7 @@ const host = process.argv[2];
 const port = process.argv[3];
 
 const RED = '\033[0;31m';
-const WHITE = '\033[0m'
+const WHITE = '\033[0m';
 
 if(host == null || port == null){
     console.log(`${RED}Please execute : sudo node --max-http-header-size=1000000 app.js host port`);
@@ -119,9 +119,16 @@ const requestListener = function(req,res){
             case 'getRecipeName':
                 sql = `select nom from recettes where id="${data['idRecipe']}";`;
                 recettesDB.all(sql,[],(err,row)=>{
-                    res.setHeader('Content-Type','text/plain');
-                    res.end(row[0]['nom']);
-                    log(ip,action,sql,row[0]['nom'],false);
+                    if(err){log(ip,action,sql,err.toString(),true);}
+                    else{
+                        if(row[0] != null){
+                            res.setHeader('Content-Type','text/plain');
+                            res.end(row[0]['nom']);
+                            log(ip,action,sql,row[0]['nom'],false);
+                        }else{
+                            log(ip,action,sql,'recipe doesnt exist',true);
+                        }
+                    }
                 });
             break
             case 'getRecipe':
@@ -323,9 +330,13 @@ const requestListener = function(req,res){
                     sql = `select image from recettes where id='${recipeId}'`;
                     recettesDB.all(sql,[],(err,row)=>{
                         if(err){log(ip,action,sql,err.toString(),true)}
-                        res.setHeader('Content-Type','text/plain');
-                        res.end(row[0]['image']);
-                        log(ip,action,sql,row[0]['image'],false);
+                        else{
+                            if(row[0] != null){
+                                res.setHeader('Content-Type','text/plain');
+                                res.end(row[0]['image']);
+                                log(ip,action,sql,row[0]['image'],false);
+                            }
+                        }
                     });
                 break; 
                 case 'deleteIngredients':
@@ -335,9 +346,11 @@ const requestListener = function(req,res){
                     sql = sql.slice(0,-3)+';';
                     ingredientsDB.all(sql,[],(err,row)=>{
                         if(err){log(ip,action,sql,err.toString(),true)}
-                        res.setHeader('Content-Type','text/plain');
-                        res.end('success');
-                        log(ip,action,sql,'success',false);
+                        else{
+                            res.setHeader('Content-Type','text/plain');
+                            res.end('success');
+                            log(ip,action,sql,'success',false);
+                        }
                     });
                 break;
         }
@@ -359,7 +372,7 @@ function log(ip,action,content,result,err){
     var time = `${hours}:${minutes}:${seconds}`;
     var end = new Date() - start;
     var sql  = `insert into log (date,ip,term,action,sql,result,error) values ("${time}-${month}-${year}","${ip}","${end}","${action}","${content.replaceAll('"',"'")}","${result.replaceAll('"',"'")}","${err}");`;
-    logDB.all(sql,[],(err)=>{throw err;});
+    logDB.all(sql,[],(err)=>{if(err){throw err;}});
     time = `${hours}:${minutes}:${seconds}`;
     Ldata = `${time} | (${end}ms) ${ip} - [${action}] - ${content}`;
     if(err){Ldata = RED +"/!\\ " +Ldata+WHITE;}

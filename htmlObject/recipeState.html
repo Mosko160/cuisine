@@ -18,8 +18,6 @@ Pour ajouter ce code il faut appeler :
         <option value="gateau">Gateau</option>
         <option value="boisson">Boisson</option>
     </select>
-    <p>Photo du plat : </p>
-    <input type='file' id='imageInput'>
 </div>
 <div id='state2' style='display: none;'>
     <p>Ingredients :</p>
@@ -32,7 +30,9 @@ Pour ajouter ce code il faut appeler :
 <div id='state4' style='display: none;'>
     <p>Étapes :</p>
     <div id='stepList'></div>
-    <button onclick='submit()' class="btn">Enregistrer</button>
+    <p>Photo du plat : </p>
+    <input type='file' id='imageInput'><br><br>
+    <div onclick='submit()' class="btn">Enregistrer</div>
 </div>
 <br>
 <div id='nextButton' onclick='next()' class="btn">Suivant</div>
